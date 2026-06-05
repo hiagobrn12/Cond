@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Executivo — Condicionantes Ambientais · INPASA · Jun/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d3a63;--navy2:#124E81;--navy3:#1a5d97;
+  --orange:#EAA239;--orange2:#FFA32A;
+  --green:#609346;--green-bg:#e8f1e1;
+  --amber:#b06000;--amber-bg:#fff3cd;
+  --red:#CC5121;--red-bg:#fce5dc;
+  --gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;
+  --gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--gray-700:#334155;
+  --gray:#64748b;--gray-bg:#f1f5f9;
+  --white:#fff;--text:#0f172a;--text-muted:#64748b;--border:#e2e8f0;--page-bg:#f4f6f9;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-display:'Barlow Condensed',-apple-system,sans-serif;
+  --shadow-card:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
+  --shadow-lg:0 4px 6px -1px rgba(15,23,42,.07),0 2px 4px -1px rgba(15,23,42,.04);
+  --r-sm:4px;--r-md:6px;--r-lg:8px;--r-xl:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--page-bg);color:var(--text);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased}
+
+/* ── TOPBAR ── */
+.topbar{background:var(--navy2);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(15,23,42,.18)}
+.topbar-brand{display:flex;align-items:center;gap:10px}
+.topbar-brand img{height:32px}
+.topbar-title{color:rgba(255,255,255,.9);font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:.3px}
+.topbar-badge{background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:var(--r-sm);letter-spacing:.3px}
+
+/* ── PAGE ── */
+.page{max-width:1440px;margin:0 auto;padding:20px 24px 40px}
+
+/* ── HOME TITLE ── */
+.report-title{font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--navy2);line-height:1;margin-bottom:3px}
+.report-title em{font-style:italic;font-weight:500;color:var(--orange)}
+.report-sub{font-size:11px;color:var(--gray);margin-bottom:18px}
+
+/* ── CALLOUT INSIGHT ── */
+.insight-box{background:var(--white);border:1px solid var(--gray-200);border-left:4px solid var(--navy2);border-radius:var(--r-lg);padding:13px 18px;margin-bottom:18px;font-size:13px;line-height:1.65;color:var(--gray-700);box-shadow:var(--shadow-card)}
+.insight-box strong{color:var(--navy2);font-weight:600}
+
+/* ── KPI HERO ── */
+.kpi-hero{display:grid;grid-template-columns:1.2fr repeat(5,1fr);gap:10px;margin-bottom:18px}
+.kpi-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:14px 16px;box-shadow:var(--shadow-card)}
+.kpi-card.primary{background:linear-gradient(135deg,var(--navy2),var(--navy3));border-color:var(--navy2)}
+.kpi-label{font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px}
+.kpi-card.primary .kpi-label{color:rgba(255,255,255,.7)}
+.kpi-value{font-family:var(--font-display);font-size:36px;font-weight:800;color:var(--navy2);line-height:1;margin:4px 0 3px;letter-spacing:-.02em}
+.kpi-card.primary .kpi-value{color:#fff;font-size:42px}
+.kpi-sub{font-size:10px;color:var(--text-muted);line-height:1.3}
+.kpi-card.primary .kpi-sub{color:rgba(255,255,255,.75)}
+.kpi-delta{display:inline-block;padding:1px 7px;border-radius:10px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-top:4px}
+.kpi-delta.pos{background:var(--green-bg);color:var(--green)}
+.kpi-delta.neg{background:var(--red-bg);color:var(--red)}
+.kpi-delta.neu{background:var(--gray-bg);color:var(--gray-600)}
+
+/* ── SECTION HEADER ── */
+.section-eyebrow{display:flex;align-items:center;gap:10px;margin:20px 0 10px}
+.section-eyebrow h3{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--navy2);text-transform:uppercase;letter-spacing:.6px;margin:0}
+.section-eyebrow .bar{flex:1;height:1px;background:linear-gradient(90deg,var(--gray-200),transparent)}
+.section-eyebrow .count-tag{font-size:10px;color:var(--gray);background:var(--white);border:1px solid var(--border);padding:2px 9px;border-radius:3px}
+
+/* ── DISCIPLINE SHIFT CARD ── */
+.disc-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:18px}
+.disc-card-header{background:var(--navy2);padding:8px 16px;display:flex;align-items:center;justify-content:space-between}
+.disc-card-header span{font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px}
+.disc-card-body{display:grid;grid-template-columns:1fr auto 1fr;gap:0}
+.disc-col{padding:14px 18px}
+.disc-col.before{border-right:1px solid var(--gray-200)}
+.disc-period{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
+.disc-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.disc-name{font-size:12px;color:var(--gray-700);width:160px;flex-shrink:0}
+.disc-track{flex:1;height:9px;background:var(--gray-100);border-radius:3px;overflow:hidden}
+.disc-fill{height:9px;border-radius:3px}
+.fill-eng{background:var(--navy2)}
+.fill-obras{background:var(--green)}
+.fill-other{background:var(--gray-300)}
+.disc-num{font-size:11px;font-weight:700;width:24px;text-align:right}
+.disc-arrow-cell{display:flex;align-items:center;justify-content:center;padding:0 16px;background:var(--gray-50);font-size:24px;color:var(--green)}
+.disc-highlight{display:inline-block;background:var(--green-bg);color:var(--green);font-size:11px;font-weight:600;padding:4px 10px;border-radius:var(--r-sm);margin-top:10px}
+
+/* ── TABLE CARD ── */
+.tbl-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:18px}
+.tbl-header{background:var(--navy2);padding:9px 16px;display:flex;align-items:center;justify-content:space-between}
+.tbl-header h3{font-family:var(--font-display);font-size:14px;font-weight:700;color:#fff;letter-spacing:.3px}
+.tbl-header .sub{font-size:10px;color:rgba(255,255,255,.7);font-weight:400}
+.tbl-note{background:#fffbee;border-bottom:1px solid #f0d080;padding:8px 16px;font-size:12px;color:#5a3b00;line-height:1.6}
+.tbl-note strong{color:var(--navy2)}
+table.main{width:100%;border-collapse:collapse;font-size:12px}
+table.main thead tr{background:var(--gray-bg)}
+table.main th{padding:7px 12px;text-align:left;font-weight:700;color:var(--navy2);font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;border-bottom:2px solid var(--border);white-space:nowrap}
+table.main td{padding:8px 12px;border-bottom:1px solid var(--gray-100);vertical-align:middle;line-height:1.4}
+table.main tr:last-child td{border-bottom:none}
+table.main tr:hover td{background:var(--gray-50)}
+table.main tr.hl td{background:#f0faf3}
+table.main tr.hl:hover td{background:#e5f5eb}
+
+/* codes */
+.code{font-family:'SF Mono','Consolas',monospace;font-size:10.5px;font-weight:700;color:var(--navy2);background:var(--gray-bg);padding:2px 6px;border-radius:3px;border:1px solid var(--gray-300);white-space:nowrap}
+.pname{font-size:12px;font-weight:600;color:var(--text)}
+.pmeta{font-size:10px;color:var(--green);font-weight:600;margin-top:2px}
+
+/* unit badges */
+.u{font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap;letter-spacing:.2px}
+.u-snp{background:#dbeafe;color:#1e40af}
+.u-nmt{background:#dcfce7;color:#166534}
+.u-drd{background:#fef9c3;color:#854d0e}
+.u-sdl{background:#ede9fe;color:#5b21b6}
+.u-bls{background:#fee2e2;color:#991b1b}
+
+/* status/prio badges */
+.b{font-size:9.5px;font-weight:600;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.b-crit{background:var(--red-bg);color:var(--red)}
+.b-alto{background:var(--amber-bg);color:var(--amber)}
+.b-med{background:#ede9fe;color:#5b21b6}
+.b-bxo{background:var(--green-bg);color:var(--green)}
+.b-and{background:var(--green-bg);color:var(--green)}
+.b-atr{background:var(--red-bg);color:var(--red)}
+.b-conc{background:#e0f2fe;color:#0369a1}
+
+/* FEL flow */
+.ff{display:flex;align-items:center;gap:3px;white-space:nowrap}
+.ff-from{font-size:9.5px;font-weight:600;padding:2px 6px;border-radius:3px;background:var(--gray-200);color:var(--gray-600)}
+.ff-to{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:3px;background:var(--navy2);color:#fff}
+.ff-to-iv{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:3px;background:#166534;color:#fff}
+.ff-arr{color:var(--gray-300);font-size:11px}
+
+/* mini pipeline */
+.mp{display:flex;gap:2px;align-items:center}
+.mp span{font-size:8.5px;padding:2px 5px;border-radius:2px}
+.mp .done{background:var(--green-bg);color:var(--green);font-weight:600}
+.mp .curr{background:var(--navy2);color:#fff;font-weight:700}
+.mp .pend{background:var(--gray-200);color:var(--gray-500)}
+.mp .dot{color:var(--gray-300);font-size:9px;padding:0 1px}
+
+/* lead time */
+.lt{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.lt-lo{background:var(--green-bg);color:var(--green)}
+.lt-mi{background:var(--amber-bg);color:var(--amber)}
+.lt-hi{background:var(--red-bg);color:var(--red)}
+
+/* capex delta */
+.cap{display:flex;align-items:baseline;gap:5px;flex-wrap:wrap}
+.cap-old{font-size:10px;color:var(--text-muted);text-decoration:line-through}
+.cap-new{font-size:12px;font-weight:700;color:var(--text)}
+.cap-d{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px}
+.cap-up{background:var(--red-bg);color:var(--red)}
+.cap-dn{background:var(--green-bg);color:var(--green)}
+.cap-eq{background:var(--gray-bg);color:var(--gray-600)}
+
+/* ── CONCLUDED CARDS ── */
+.conc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-bottom:18px}
+.cc{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:14px 16px;border-left:3px solid var(--green);box-shadow:var(--shadow-card)}
+.cc-head{display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.cc-name{font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:10px;line-height:1.4}
+.cc-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-bottom:4px}
+.cc-lbl{color:var(--text-muted)}
+.cc-val{font-weight:600;color:var(--text);text-align:right}
+.cc-total{margin-top:8px;padding-top:8px;border-top:1px solid var(--gray-200);display:flex;justify-content:space-between;align-items:center}
+.cc-tlbl{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted)}
+.cc-tval{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--green)}
+.cc-bar{height:5px;border-radius:3px;background:var(--gray-100);overflow:hidden;margin-top:8px;display:flex}
+.bar-i{background:#c8e6d3}.bar-ii{background:#5ebc88}.bar-iii{background:#1a7a3a}.bar-iv{background:#0d4d25}
+.cc-legend{display:flex;gap:10px;margin-top:5px;flex-wrap:wrap}
+.cc-leg{display:flex;align-items:center;gap:3px;font-size:9.5px;color:var(--text-muted)}
+.cc-leg-dot{width:8px;height:5px;border-radius:1px;flex-shrink:0}
+
+/* ── DELAY TABLE ── */
+.atr-fill-wrap{display:flex;align-items:center;gap:6px}
+.atr-track{flex:1;height:5px;background:var(--gray-100);border-radius:3px;overflow:hidden;min-width:40px}
+.atr-fill{height:5px;background:var(--red);border-radius:3px}
+.atr-days{font-size:10.5px;font-weight:700;color:var(--red);white-space:nowrap}
+
+/* ── CAPEX PER UNIT ── */
+.cx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:18px}
+.cx{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:12px 14px;box-shadow:var(--shadow-card)}
+.cx-unit{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.cx-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px}
+.cx-lbl{font-size:10px;color:var(--text-muted)}
+.cx-val{font-size:12px;font-weight:700;color:var(--text)}
+.cx-delta{font-size:10px;font-weight:600;margin-top:6px;padding-top:6px;border-top:1px solid var(--gray-200);display:flex;justify-content:space-between}
+.cx-track{height:4px;background:var(--gray-100);border-radius:2px;overflow:hidden;margin-top:6px}
+.cx-prog{height:4px;border-radius:2px}
+
+/* ── WAVES ── */
+.waves-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;margin-bottom:10px}
+.wave{background:var(--white);padding:12px 14px}
+.wave-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:4px}
+.wave-val{font-family:var(--font-display);font-size:24px;font-weight:800;color:var(--navy2);line-height:1}
+.wave-delta{display:inline-block;font-size:9px;font-weight:700;padding:1px 6px;border-radius:10px;margin-top:4px}
+.wave-delta.pos{background:var(--green-bg);color:var(--green)}
+.wave-delta.neg{background:var(--red-bg);color:var(--red)}
+.wave-delta.neu{background:var(--gray-bg);color:var(--gray-600)}
+.wave-sub{font-size:10px;color:var(--text-muted);margin-top:2px}
+
+/* ── SUMMARY PANELS ── */
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:10px}
+.sum-panel{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow-card)}
+.sum-panel.green{border-top:3px solid var(--green)}
+.sum-panel.amber{border-top:3px solid var(--amber)}
+.sum-panel.blue{border-top:3px solid var(--navy2)}
+.sum-title{font-family:var(--font-display);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
+.sum-panel.green .sum-title{color:var(--green)}
+.sum-panel.amber .sum-title{color:var(--amber)}
+.sum-panel.blue  .sum-title{color:var(--navy2)}
+.sum-li{display:flex;gap:7px;margin-bottom:7px;font-size:12px;color:var(--gray-600);line-height:1.5}
+.sum-li::before{content:'•';flex-shrink:0;font-weight:700;margin-top:1px}
+.sum-panel.green .sum-li::before{color:var(--green)}
+.sum-panel.amber .sum-li::before{color:var(--amber)}
+.sum-panel.blue  .sum-li::before{color:var(--navy2)}
+.sum-li strong{color:var(--navy2);font-weight:700}
+
+/* ── FOOTER ── */
+.footer{padding:14px 24px;border-top:1px solid var(--gray-200);background:var(--white);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:32px}
+.ft{font-size:10px;color:var(--text-muted)}
+
+@media print {
+  @page {
+    size: A3 landscape;
+    margin: 12mm 10mm;
+  }
+  body { font-size: 11px; background: #fff !important; }
+  .topbar { position: static !important; box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  /* floating print button */
+  div[style*="position:fixed"] { display: none !important; }
+  /* avoid breaking inside cards and rows */
+  .cc, .wave, .cx, .tbl-card, .disc-card, .kpi-card { break-inside: avoid; }
+  table.main tr { break-inside: avoid; }
+  /* force colors to print */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  /* page breaks between major sections */
+  .section-eyebrow { break-before: auto; }
+  /* reduce padding for print */
+  .page { padding: 8px 10px 20px; }
+  .kpi-hero { grid-template-columns: repeat(6,1fr); }
+  .conc-grid { grid-template-columns: repeat(3,1fr); }
+  .cx-grid   { grid-template-columns: repeat(5,1fr); }
+  .waves-grid{ grid-template-columns: repeat(5,1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <div class="topbar-title">INPASA Agroindustrial S/A — Report Executivo · Condicionantes Ambientais</div>
+  </div>
+  <div class="topbar-badge">Ref. 04/Jun/2026</div>
+</div>
+
+<!-- PAGE -->
+<div class="page">
+
+  <div class="report-title fade"><em>Avanços do Portfólio</em> · Condicionantes Ambientais</div>
+  <div class="report-sub">Análise comparativa 08/Mai/2026 → 04/Jun/2026 &nbsp;·&nbsp; 5 unidades · 43 projetos ativos · Board #18409654427</div>
+
+  <!-- INSIGHT -->
+  <div class="insight-box">
+    <strong>Leitura executiva do período:</strong> Em 27 dias o portfólio saiu de 4 para <strong>8 projetos concluídos</strong>, transferiu <strong>13 projetos de Engenharia de Processos para Obras</strong> e reduziu os críticos abertos de 13 para 11. A disciplina de <strong>Obras passou de 6 para 16 pendências ativas</strong> — o que representa, na prática, o descarregamento da engenharia e a mobilização do campo. O número de atrasos no board reflete reprogramação de prazo base, não paralisação — a maioria dos projetos em atraso tem obra em andamento ou conclusão iminente.
+  </div>
+
+  <!-- KPI HERO -->
+  <div class="kpi-hero">
+    <div class="kpi-card primary">
+      <div class="kpi-label">Portfólio Ativo</div>
+      <div class="kpi-value">43</div>
+      <div class="kpi-sub">5 unidades · Board #18409654427</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Concluídos</div>
+      <div class="kpi-value" style="color:var(--green)">8</div>
+      <div class="kpi-sub">↑ +4 vs 08/Mai</div>
+      <div class="kpi-delta pos">+100%</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Em Atraso</div>
+      <div class="kpi-value" style="color:var(--red)">14</div>
+      <div class="kpi-sub">↓ −1 vs 08/Mai (15)</div>
+      <div class="kpi-delta pos">Melhorou</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Críticos Abertos</div>
+      <div class="kpi-value" style="color:var(--red)">11</div>
+      <div class="kpi-sub">↓ −2 vs 08/Mai (13)</div>
+      <div class="kpi-delta pos">Melhorou</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Avançaram FEL II→III</div>
+      <div class="kpi-value" style="color:var(--navy2)">13</div>
+      <div class="kpi-sub">Engenharia → Obras</div>
+      <div class="kpi-delta neu">Período</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CAPEX Vigente</div>
+      <div class="kpi-value" style="font-size:22px;color:var(--amber)">R$44,40mi</div>
+      <div class="kpi-sub">↑ +R$1,97mi vs 08/Mai</div>
+      <div class="kpi-delta neg">+4,7%</div>
+    </div>
+  </div>
+
+  <!-- ═══ 1. TRANSFERÊNCIA DISCIPLINA ═══ -->
+  <div class="section-eyebrow">
+    <h3>1 · Transferência de Engenharia para Obras</h3>
+    <div class="bar"></div>
+    <div class="count-tag">Disciplina responsável por pendência · 08/Mai vs 04/Jun/2026</div>
+  </div>
+
+  <div class="disc-card">
+    <div class="disc-card-header">
+      <span>Pendências por Disciplina — Antes e Depois</span>
+      <span style="font-size:10px;font-weight:400;color:rgba(255,255,255,.7)">Eng. Processos: 17 → 7 &nbsp;|&nbsp; Obras: 6 → 16</span>
+    </div>
+    <!-- grade alinhada: mesma ordem nas duas colunas, setas no meio evidenciando o movimento -->
+    <div style="display:grid;grid-template-columns:1fr 72px 1fr">
+
+      <!-- ANTES -->
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200)">
+        <div class="disc-period">08/Mai/2026</div>
+        <!-- linha 1: Eng.Proc — destaque azul -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;background:#eef3fb;border-radius:4px;padding:3px 6px 3px 6px;margin-left:-6px">
+          <span style="font-size:12px;font-weight:700;color:var(--navy2);width:162px;flex-shrink:0">Engenharia Processos</span>
+          <div class="disc-track"><div class="disc-fill fill-eng" style="width:100%"></div></div>
+          <span style="font-size:11px;font-weight:700;color:var(--navy2);width:24px;text-align:right">17</span>
+        </div>
+        <!-- linha 2: Obras — destaque verde -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;background:#edf7f0;border-radius:4px;padding:3px 6px 3px 6px;margin-left:-6px">
+          <span style="font-size:12px;font-weight:700;color:var(--green);width:162px;flex-shrink:0">Obras</span>
+          <div class="disc-track"><div class="disc-fill fill-obras" style="width:35%"></div></div>
+          <span style="font-size:11px;font-weight:700;color:var(--green);width:24px;text-align:right">6</span>
+        </div>
+        <!-- demais -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Processo</span>
+          <div class="disc-track"><div class="disc-fill fill-other" style="width:35%"></div></div>
+          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">6</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Meio Ambiente</span>
+          <div class="disc-track"><div class="disc-fill fill-other" style="width:35%"></div></div>
+          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">6</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Outros (4 disc.)</span>
+          <div class="disc-track"><div class="disc-fill fill-other" style="width:24%"></div></div>
+          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">4</span>
+        </div>
+      </div>
+
+      <!-- SETAS DO MEIO — alinhadas com as linhas 1 e 2 -->
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:32px;background:var(--gray-50);gap:0">
+        <!-- seta 1: Eng.Proc caiu -->
+        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
+          <span style="font-size:11px;font-weight:700;color:var(--navy2);display:flex;align-items:center;gap:2px">
+            <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M2 7h13M11 2l5 5-5 5" stroke="#124E81" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <!-- seta 2: Obras subiu -->
+        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
+          <span style="font-size:11px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:2px">
+            <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M2 7h13M11 2l5 5-5 5" stroke="#609346" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <!-- seta 3,4,5: demais -->
+        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h11M9 1l4 4-4 4" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h11M9 1l4 4-4 4" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h11M9 1l4 4-4 4" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <!-- DEPOIS — mesma ordem das linhas -->
+      <div style="padding:16px 20px">
+        <div class="disc-period">04/Jun/2026</div>
+        <!-- linha 1: Eng.Proc — caiu, destaque azul com número menor -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;background:#eef3fb;border-radius:4px;padding:3px 6px 3px 6px;margin-left:-6px">
+          <span style="font-size:12px;font-weight:700;color:var(--navy2);width:162px;flex-shrink:0">Engenharia Processos</span>
+          <div class="disc-track"><div class="disc-fill fill-eng" style="width:44%"></div></div>
+          <span style="font-size:11px;font-weight:700;color:var(--navy2);width:24px;text-align:right">7</span>
+        </div>
+        <!-- linha 2: Obras — subiu, destaque verde com número maior -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;background:#edf7f0;border-radius:4px;padding:3px 6px 3px 6px;margin-left:-6px">
+          <span style="font-size:12px;font-weight:700;color:var(--green);width:162px;flex-shrink:0">Obras</span>
+          <div class="disc-track"><div class="disc-fill fill-obras" style="width:100%"></div></div>
+          <span style="font-size:11px;font-weight:700;color:var(--green);width:24px;text-align:right">16</span>
+        </div>
+        <!-- demais -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Processo</span>
+          <div class="disc-track"><div class="disc-fill fill-other" style="width:19%"></div></div>
+          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">3</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Meio Ambiente</span>
+          <div class="disc-track"><div class="disc-fill fill-other" style="width:19%"></div></div>
+          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">3</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Outros (5 disc.)</span>
+          <div class="disc-track"><div class="disc-fill fill-other" style="width:44%"></div></div>
+          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">7</span>
+        </div>
+        <span class="disc-highlight">+10 projetos chegaram à disciplina Obras</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 5. ONDAS ═══ -->
+  <div class="section-eyebrow">
+    <h3>2 · Ondas de Prioridade — Plano de Ataque</h3>
+    <div class="bar"></div>
+    <div class="count-tag">Variação 08/Mai → 04/Jun/2026</div>
+  </div>
+
+  <div class="waves-grid">
+    <div class="wave" style="border-top:3px solid var(--green)">
+      <div class="wave-lbl">Onda 1 · FEL IV</div>
+      <div class="wave-val">8</div>
+      <div class="wave-delta pos">↓−1 vs 08/Mai (9)</div>
+      <div class="wave-sub">Em execução · não para</div>
+      <div style="margin-top:8px;font-size:10px;line-height:1.5;color:var(--text-muted)">
+        <span style="color:var(--red);font-weight:600">▼ BLS-MLR-034</span> concluído — saiu da Onda 1
+      </div>
+    </div>
+    <div class="wave"><div class="wave-lbl">Onda 2 · Críticos</div><div class="wave-val">7</div><div class="wave-delta pos">↓−2 vs 08/Mai</div><div class="wave-sub">Ataque imediato</div></div>
+    <div class="wave"><div class="wave-lbl">Onda 3 · Altos</div><div class="wave-val">12</div><div class="wave-delta pos">↓−1 vs 08/Mai</div><div class="wave-sub">Sequência controlada</div></div>
+    <div class="wave"><div class="wave-lbl">Onda 4 · Médio+Baixo</div><div class="wave-val">7</div><div class="wave-delta pos">↓−1 vs 08/Mai</div><div class="wave-sub">Eliminação por unidade</div></div>
+    <div class="wave"><div class="wave-lbl">Total em Aberto</div><div class="wave-val">35</div><div class="wave-delta pos">↓−4 vs 08/Mai</div><div class="wave-sub">Excluindo concluídos</div></div>
+  </div>
+  <div style="font-size:11px;color:var(--text-muted);margin-bottom:18px">
+    <strong>Onda 1:</strong> reduziu de 9 para 8 — <span style="color:var(--red);font-weight:600">BLS-MLR-034 concluído</span>, saiu da onda.
+    &nbsp;·&nbsp; <strong>Onda 2:</strong> reduziu de 9 para 7 — BLS-MON concluído + outros projetos avançaram de fase.
+    &nbsp;·&nbsp; <strong>NMT-MLR-023:</strong> permanece em FEL II (não é Onda 1).
+  </div>
+
+  <!-- ═══ 3. PROJETOS CONCLUÍDOS ═══ -->
+  <div class="section-eyebrow">
+    <h3>3 · Projetos Concluídos no Período</h3>
+    <div class="bar"></div>
+    <div class="count-tag">4 concluídos em 08/Mai → 8 em 04/Jun · +4 novos</div>
+  </div>
+
+  <div class="conc-grid">
+
+    <!-- 1. BLS-MLR-034 — Construção de depósito de cinzas -->
+    <div class="cc" style="border:2px solid var(--green);border-left:4px solid var(--green)">
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
+        <span class="code">BLS-MLR-034</span>
+        <span class="u u-bls">BLS — Balsas · MA</span>
+        <span class="b b-conc">Concluído</span>
+        <span style="font-size:9px;background:#fff3cd;color:var(--amber);font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid #f0d080">⭐ Era Onda 1</span>
+      </div>
+      <div class="cc-name">Construção de depósito de cinzas</div>
+      <div style="font-size:10px;color:var(--green);font-weight:600;background:var(--green-bg);padding:5px 8px;border-radius:4px;margin-bottom:10px;line-height:1.5">
+        ✓ Estava na <strong>Onda 1</strong> em 08/Mai (FEL IV · Crítico · Em Atraso).<br>
+        Concluído no período → <strong>Onda 1: 9 → 8 projetos (−1)</strong>
+      </div>
+      <div class="cc-row"><span class="cc-lbl">Execução 100%</span><span class="cc-val" style="color:var(--green);font-weight:700">29/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Formalização</span><span class="cc-val">05/Jun/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prazo original</span><span class="cc-val" style="color:var(--red)">16/Mai/2026 — em atraso</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-crit">Crítico</span></div>
+    </div>
+
+    <!-- 2. BLS-CSAO — Caixas CSAO -->
+    <div class="cc" style="border-left:4px solid var(--green)">
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
+        <span class="code">BLS-CSAO</span>
+        <span class="u u-bls">BLS — Balsas · MA</span>
+        <span class="b b-conc">Concluído</span>
+      </div>
+      <div class="cc-name">Caixas CSAO — Pendente Instalação das Caixas CSAO</div>
+      <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">29/Abr/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Fase de conclusão</span><span class="cc-val">FEL IV — execução completa</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-alto">Alto</span></div>
+    </div>
+
+    <!-- 3. BLS-POC — Poços de Captação -->
+    <div class="cc" style="border-left:4px solid var(--green)">
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
+        <span class="code">BLS-POC</span>
+        <span class="u u-bls">BLS — Balsas · MA</span>
+        <span class="b b-conc">Concluído</span>
+      </div>
+      <div class="cc-name">Poços de Captação — Extrapolamento Horas Trabalhadas e Vazão</div>
+      <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">22/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Fase de conclusão</span><span class="cc-val">Estudo</span></div>
+      <div class="cc-row"><span class="cc-lbl">Nota</span><span class="cc-val" style="color:var(--navy2)">Relatório emitido</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-alto">Alto</span></div>
+    </div>
+
+    <!-- 4. BLS-MON — Monge Lagoa Pluvial -->
+    <div class="cc">
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
+        <span class="code">BLS-MON</span>
+        <span class="u u-bls">BLS — Balsas · MA</span>
+        <span class="b b-conc">Concluído</span>
+      </div>
+      <div class="cc-name">Monge Lagoa Pluvial — Monge de Saída em Cota Superior ao Fundo da Lagoa</div>
+      <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">~22/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-crit">Crítico</span></div>
+      <div style="margin-top:10px;padding:9px 11px;background:#fffbee;border:1px solid #f0d080;border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:11px;color:#5a3b00;line-height:1.6">
+        <strong style="display:block;margin-bottom:3px;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--amber)">Observação</strong>
+        Enviado CAPEX revisado que está sendo considerado junto com a melhoria <strong>BLS-MLR-047 — Sistema de qualidade da bacia pluvial</strong>. Sendo assim, o acompanhamento deste item passará a ser a melhoria, que está pendente projeto elétrico.
+      </div>
+    </div>
+
+    <!-- 5. SNP-MLR-311 — Baia de Acondicionamento -->
+    <div class="cc">
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
+        <span class="code">SNP-MLR-311</span>
+        <span class="u u-snp">SNP — Sinop · MT</span>
+        <span class="b b-conc">Concluído</span>
+      </div>
+      <div class="cc-name">Baia de Acondicionamento Temporário — Resíduos de Varrição</div>
+      <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">14/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-bxo">Baixo</span></div>
+      <div style="margin-top:10px;padding:9px 11px;background:#fffbee;border:1px solid #f0d080;border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:11px;color:#5a3b00;line-height:1.6">
+        <strong style="display:block;margin-bottom:3px;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--amber)">Observação</strong>
+        Definido com Engenharia e Meio Ambiente que a Baia será implantada ao lado da nova Central de Resíduos. A Engenharia irá elaborar os projetos junto com o escopo da obra do <strong>SNP-MLR-276 — Stacker Reclaimer — Automatização de Fluxo de Biomassa</strong>, que está em andamento na unidade.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ 2. PROJETOS QUE AVANÇARAM DE FASE FEL ═══ -->
+  <div class="section-eyebrow">
+    <h3>4 · Projetos que Avançaram de Fase FEL</h3>
+    <div class="bar"></div>
+    <div class="count-tag">FEL II → FEL III · Engenharia finalizada · 08/Mai → 04/Jun/2026</div>
+  </div>
+
+  <div class="tbl-card">
+    <div class="tbl-header">
+      <h3>13 Projetos — Engenharia Concluída, Responsabilidade Transferida para Obras</h3>
+      <span class="sub">FEL II = Engenharia elaborando projetos e revisando CAPEX &nbsp;|&nbsp; FEL III = Projetos emitidos, CAPEX aprovado, responsabilidade passa a Obras</span>
+    </div>
+    <div class="tbl-note">
+      <strong>Lead Time FEL II</strong> = dias que a engenharia levou para concluir o detalhamento na fase FEL II.
+      <span style="margin-left:16px;display:inline-flex;gap:10px;align-items:center">
+        <span class="lt lt-lo" style="font-size:9px">≤ 90 dias — ágil</span>
+        <span class="lt lt-mi" style="font-size:9px">91–150 dias — normal</span>
+        <span class="lt lt-hi" style="font-size:9px">&gt; 150 dias — longo</span>
+      </span>
+    </div>
+    <div style="overflow-x:auto">
+    <table class="main">
+      <thead><tr>
+        <th>Código</th><th>Projeto</th><th>Unidade</th><th>Avanço FEL</th><th>Lead Time FEL II</th><th>Pipeline</th>
+        <th>Disciplina</th><th>Prioridade</th><th>CAPEX Revisado</th><th>Prazo</th><th>Status</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="code">SNP-MLR-284</span></td>
+          <td><span class="pname">Melhoria/substituição da peneira rotativa</span></td>
+          <td><span class="u u-snp">SNP</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-hi">182 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-crit">Crítico</span></td>
+          <td><div class="cap"><span class="cap-old">R$60k</span><span class="cap-new">R$429k</span><span class="cap-d cap-up">+613%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">10/06/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">SNP-MLR-294</span></td>
+          <td><span class="pname">Fertirrigação</span></td>
+          <td><span class="u u-snp">SNP</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-hi">175 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-crit">Crítico</span></td>
+          <td><div class="cap"><span class="cap-old">R$216k</span><span class="cap-new">R$1,89mi</span><span class="cap-d cap-up">+775%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">29/06/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">SNP-MLR-310</span></td>
+          <td><span class="pname">Controle de erosões</span></td>
+          <td><span class="u u-snp">SNP</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-lo">43 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-alto">Alto</span></td>
+          <td><div class="cap"><span class="cap-old">R$974k</span><span class="cap-new">R$688k</span><span class="cap-d cap-dn">−29%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">06/07/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">SNP-MLR-295</span></td>
+          <td><span class="pname">Telemetria dos poços de observação</span></td>
+          <td><span class="u u-snp">SNP</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-hi">168 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras / Instr.</strong></td>
+          <td><span class="b b-bxo">Baixo</span></td>
+          <td><div class="cap"><span class="cap-new">R$286k</span><span class="cap-d cap-eq">mantido</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">05/07/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+
+        <tr>
+          <td><span class="code">NMT-MLR-190</span></td>
+          <td><span class="pname">Implantação de monge pluvial e dissipador de saída</span></td>
+          <td><span class="u u-nmt">NMT</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-hi">258 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-crit">Crítico</span></td>
+          <td><div class="cap"><span class="cap-old">R$846k</span><span class="cap-new">R$1,08mi</span><span class="cap-d cap-up">+27%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">29/09/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">NMT-MLR-191</span></td>
+          <td><span class="pname">Cercamento da fertirrigação</span></td>
+          <td><span class="u u-nmt">NMT</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-mi">145 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-med">Médio</span></td>
+          <td><div class="cap"><span class="cap-old">R$444k</span><span class="cap-new">R$28k</span><span class="cap-d cap-dn">−94%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">19/06/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">DRD-MLR-167</span></td>
+          <td><span class="pname">Tratamento efluente oleoso da lavagem de caminhões</span></td>
+          <td><span class="u u-drd">DRD</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-lo">74 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-crit">Crítico</span></td>
+          <td><div class="cap"><span class="cap-old">R$835k</span><span class="cap-new">R$1,07mi</span><span class="cap-d cap-up">+28%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">30/06/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">DRD-MLR-172</span></td>
+          <td><span class="pname">Cercamento da fertirrigação</span></td>
+          <td><span class="u u-drd">DRD</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-hi">266 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-bxo">Baixo</span></td>
+          <td><div class="cap"><span class="cap-old">R$229k</span><span class="cap-new">R$287k</span><span class="cap-d cap-up">+25%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">08/07/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">DRD-MLR-205</span></td>
+          <td><span class="pname">Armazém de IBC</span></td>
+          <td><span class="u u-drd">DRD</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-lo">41 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-bxo">Baixo</span></td>
+          <td><div class="cap"><span class="cap-old">R$144k</span><span class="cap-new">R$107k</span><span class="cap-d cap-dn">−26%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">22/06/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">SDL-MLR-061</span></td>
+          <td><span class="pname">Sistema de qualidade da bacia pluvial</span></td>
+          <td><span class="u u-sdl">SDL</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-lo">47 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-alto">Alto</span></td>
+          <td><div class="cap"><span class="cap-old">R$3,64mi</span><span class="cap-new">R$894k</span><span class="cap-d cap-dn">−75%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">11/09/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">BLS-MLR-051</span></td>
+          <td><span class="pname">Sistema de drenagem próximo ao muro</span></td>
+          <td><span class="u u-bls">BLS</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-lo">29 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-alto">Alto</span></td>
+          <td><div class="cap"><span class="cap-old">sem CAPEX</span><span class="cap-new">R$298k</span><span class="cap-d cap-dn">novo</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">11/09/2026</td>
+          <td><span class="b b-atr">Em Atraso</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">BLS-MLR-038</span></td>
+          <td><span class="pname">Construção de depósito para IBCs</span></td>
+          <td><span class="u u-bls">BLS</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-hi">158 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-bxo">Baixo</span></td>
+          <td><div class="cap"><span class="cap-old">R$50k</span><span class="cap-new">R$87k</span><span class="cap-d cap-up">+73%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">06/07/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+        <tr>
+          <td><span class="code">BLS-MLR-020</span></td>
+          <td><span class="pname">Cercamento da fertirrigação</span></td>
+          <td><span class="u u-bls">BLS</span></td>
+          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
+          <td><span class="lt lt-hi">121 dias</span></td>
+          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
+          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
+          <td><span class="b b-bxo">Baixo</span></td>
+          <td><div class="cap"><span class="cap-old">R$162k</span><span class="cap-new">R$305k</span><span class="cap-d cap-up">+88%</span></div></td>
+          <td style="font-size:10.5px;white-space:nowrap">01/07/2026</td>
+          <td><span class="b b-and">Em Andamento</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ═══ 4. ATRASOS ═══ -->
+  <div class="section-eyebrow">
+    <h3>5 · Projetos em Atraso — Lead Time e Contexto Real</h3>
+    <div class="bar"></div>
+    <div class="count-tag">14 projetos com prazo vencido no board · Ref. 04/Jun/2026</div>
+  </div>
+
+  <div class="tbl-card">
+    <div class="tbl-header">
+      <h3>14 Projetos em Atraso — Prazo original vs reprogramado · Dias vencidos desde hoje</h3>
+    </div>
+    <div class="tbl-note">
+      <strong>Para a Diretoria:</strong> dos 14 em atraso, <strong>4 têm execução física acima de 95%</strong> (conclusão em dias), <strong>3 dependem de órgão externo</strong> (IMASUL), e somente 3 têm atraso genuíno que exige ação imediata. Os demais têm obra em andamento com prazo base desatualizado.
+    </div>
+    <div style="overflow-x:auto">
+    <table class="main">
+      <thead><tr>
+        <th>Código</th><th>Projeto</th><th>Un.</th><th>Fase</th><th>Prazo Original</th><th>Reprogramado</th><th>Dias Vencidos</th><th>Prio.</th><th>Situação Real</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="code">SNP-MLR-309</span></td><td>Sistema qualidade bacia pluvial segurança</td><td><span class="u u-snp">SNP</span></td>
+          <td style="font-size:10px">FEL II</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">30/05/2026</td><td style="font-size:10.5px;white-space:nowrap">23/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:20%"></div></div><span class="atr-days">5d</span></div></td>
+          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Projetos Civil e metal sendo elaborados</td>
+        </tr>
+        <tr>
+          <td><span class="code">SNP-POC-A</span></td><td>Poços Captação — Extrapolamento Horas (1 a 6)</td><td><span class="u u-snp">SNP</span></td>
+          <td style="font-size:10px">Estudo</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">20/03/2026</td><td style="font-size:10.5px;white-space:nowrap">15/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:65%"></div></div><span class="atr-days">76d</span></div></td>
+          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Aguardando emissão de relatório técnico</td>
+        </tr>
+        <tr>
+          <td><span class="code">SNP-POC-B</span></td><td>Poços Captação — Extrapolamento Horas (07 e 08)</td><td><span class="u u-snp">SNP</span></td>
+          <td style="font-size:10px">Estudo</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">20/03/2026</td><td style="font-size:10.5px;white-space:nowrap">15/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:65%"></div></div><span class="atr-days">76d</span></div></td>
+          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Aguardando emissão de relatório técnico</td>
+        </tr>
+        <tr>
+          <td><span class="code">SNP-MLR-248</span></td><td>Lançamento de efluente tratado por emissário</td><td><span class="u u-snp">SNP</span></td>
+          <td style="font-size:10px">FEL II</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">31/10/2025</td><td style="font-size:10.5px;white-space:nowrap">30/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:100%"></div></div><span class="atr-days">217d</span></div></td>
+          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px;color:var(--red)">Maior atraso SNP · pendência Plano de Exploração</td>
+        </tr>
+        <tr>
+          <td><span class="code">NMT-MLR-023</span></td><td>Área de fertirrigação insuficiente</td><td><span class="u u-nmt">NMT</span></td>
+          <td style="font-size:10px">FEL II</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">25/05/2026</td><td style="font-size:10.5px;white-space:nowrap">12/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:18%"></div></div><span class="atr-days">10d</span></div></td>
+          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px;color:var(--text-muted)">Em FEL II · projetos de engenharia em elaboração</td>
+        </tr>
+        <tr>
+          <td><span class="code">NMT-MLR-203</span></td><td>Telemetria dos poços de observação</td><td><span class="u u-nmt">NMT</span></td>
+          <td style="font-size:10px">FEL IV</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">29/04/2026</td><td style="font-size:10.5px;white-space:nowrap">30/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:40%"></div></div><span class="atr-days">36d</span></div></td>
+          <td><span class="b b-bxo">Baixo</span></td><td style="font-size:11px">Em execução · 12,98% avanço · MO em contratação</td>
+        </tr>
+        <tr>
+          <td><span class="code">DRD-MLR-123</span></td><td>Implantação de monge para bacia pluvial</td><td><span class="u u-drd">DRD</span></td>
+          <td style="font-size:10px">FEL IV</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">18/05/2026</td><td style="font-size:10.5px;white-space:nowrap">09/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:32%"></div></div><span class="atr-days">17d</span></div></td>
+          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Em execução · desvio melhorou: −23% → −6,10%</td>
+        </tr>
+        <tr class="hl">
+          <td><span class="code">DRD-MLR-002</span></td><td>Adequação CSAO — Posto Rodobras Dourados</td><td><span class="u u-drd">DRD</span></td>
+          <td style="font-size:10px">FEL IV</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">12/05/2026</td><td style="font-size:10.5px;white-space:nowrap">05/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:48%"></div></div><span class="atr-days">23d</span></div></td>
+          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px;color:var(--green)">✓ 99,4% de avanço físico — conclusão iminente</td>
+        </tr>
+        <tr>
+          <td><span class="code">SDL-MLR-065</span></td><td>Adequação da drenagem na lagoa 03</td><td><span class="u u-sdl">SDL</span></td>
+          <td style="font-size:10px">FEL II</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">30/05/2026</td><td style="font-size:10.5px;white-space:nowrap">06/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:18%"></div></div><span class="atr-days">5d</span></div></td>
+          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Projetos Civil com previsão de emissão</td>
+        </tr>
+        <tr>
+          <td><span class="code">SDL-POC-B</span></td><td>Poços Captação — Poço 6 e 7 sem Outorga</td><td><span class="u u-sdl">SDL</span></td>
+          <td style="font-size:10px">Estudo</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">31/08/2024</td><td style="font-size:10.5px;white-space:nowrap">30/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:100%"></div></div><span class="atr-days">643d</span></div></td>
+          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px;color:var(--amber)">Aguardando Outorga IMASUL — dependência externa</td>
+        </tr>
+        <tr>
+          <td><span class="code">SDL-FERT</span></td><td>Fertirrigação — Canhões Operando com Falhas</td><td><span class="u u-sdl">SDL</span></td>
+          <td style="font-size:10px">FEL IV</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">22/05/2026</td><td style="font-size:10.5px;white-space:nowrap">25/05/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:24%"></div></div><span class="atr-days">13d</span></div></td>
+          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">9 canhões pendentes com manutenção — em campo</td>
+        </tr>
+        <tr>
+          <td><span class="code">SDL-MLR-042</span></td><td>Melhorias na elevatória do posto Rodobras</td><td><span class="u u-sdl">SDL</span></td>
+          <td style="font-size:10px">FEL IV</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">23/05/2026</td><td style="font-size:10.5px;white-space:nowrap">05/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:28%"></div></div><span class="atr-days">12d</span></div></td>
+          <td><span class="b b-med">Médio</span></td><td style="font-size:11px;color:var(--green)">Metal-mecânica concluída · pendente só elétrica</td>
+        </tr>
+        <tr>
+          <td><span class="code">BLS-MLR-047</span></td><td>Sistema de qualidade da bacia pluvial</td><td><span class="u u-bls">BLS</span></td>
+          <td style="font-size:10px">FEL II</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">22/05/2026</td><td style="font-size:10.5px;white-space:nowrap">05/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:28%"></div></div><span class="atr-days">13d</span></div></td>
+          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Projetos Civil, Metal, Instr. emitidos · em validação</td>
+        </tr>
+        <tr>
+          <td><span class="code">BLS-MLR-051</span></td><td>Sistema de drenagem próximo ao muro</td><td><span class="u u-bls">BLS</span></td>
+          <td style="font-size:10px">FEL III</td>
+          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">01/06/2026</td><td style="font-size:10.5px;white-space:nowrap">04/06/2026</td>
+          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:10%"></div></div><span class="atr-days">3d</span></div></td>
+          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Projeto precisou ser revisado · nova emissão prevista</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ═══ 6. CAPEX ═══ -->
+  <div class="section-eyebrow">
+    <h3>6 · CAPEX por Unidade</h3>
+    <div class="bar"></div>
+    <div class="count-tag">Orçado vs Vigente · 08/Mai → 04/Jun/2026</div>
+  </div>
+
+  <div class="cx-grid">
+    <div class="cx"><div class="cx-unit"><span class="u u-snp">SNP</span> Sinop · MT</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$4,54mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$6,54mi</span></div><div class="cx-delta"><span>6 revisados</span><span style="color:var(--red)">+R$2,00mi (+44,1%)</span></div><div class="cx-track"><div class="cx-prog" style="width:69%;background:var(--navy2)"></div></div></div>
+    <div class="cx"><div class="cx-unit"><span class="u u-nmt">NMT</span> Nova Mutum · MT</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$19,62mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$21,37mi</span></div><div class="cx-delta"><span>6 revisados</span><span style="color:var(--red)">+R$1,75mi (+8,9%)</span></div><div class="cx-track"><div class="cx-prog" style="width:92%;background:var(--green)"></div></div></div>
+    <div class="cx"><div class="cx-unit"><span class="u u-drd">DRD</span> Dourados · MS</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$6,93mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$8,13mi</span></div><div class="cx-delta"><span>6 revisados</span><span style="color:var(--red)">+R$1,20mi (+17,3%)</span></div><div class="cx-track"><div class="cx-prog" style="width:85%;background:var(--amber)"></div></div></div>
+    <div class="cx"><div class="cx-unit"><span class="u u-sdl">SDL</span> Sidrolândia · MS</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$5,63mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$2,88mi</span></div><div class="cx-delta"><span>4 revisados</span><span style="color:var(--green)">−R$2,75mi (−48,8%)</span></div><div class="cx-track"><div class="cx-prog" style="width:51%;background:#5b21b6"></div></div></div>
+    <div class="cx"><div class="cx-unit"><span class="u u-bls">BLS</span> Balsas · MA</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$5,02mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$5,48mi</span></div><div class="cx-delta"><span>7 revisados</span><span style="color:var(--red)">+R$463k (+9,2%)</span></div><div class="cx-track"><div class="cx-prog" style="width:92%;background:var(--red)"></div></div></div>
+  </div>
+  <div class="insight-box" style="border-left-color:var(--green)"><strong>Destaque SDL:</strong> Sidrolândia registrou redução de CAPEX de −48,8% (−R$2,75mi) — principalmente SDL-MLR-061 que teve escopo revisado de R$3,64mi para R$894k (−75%). Revisão de escopo gerou <strong>economia real</strong>, não cancelamento de projeto.</div>
+
+  <!-- ═══ 7. SÍNTESE ═══ -->
+  <div class="section-eyebrow">
+    <h3>7 · Síntese Executiva</h3>
+    <div class="bar"></div>
+    <div class="count-tag">Leitura consolidada 08/Mai → 04/Jun/2026</div>
+  </div>
+
+  <!-- AVANÇOS -->
+  <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:12px">
+    <div style="background:var(--green);padding:9px 18px;display:flex;align-items:center;gap:10px">
+      <span style="font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">✓ Avanços do Período</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0">
+
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:6px">Transferência Engenharia → Obras</div>
+        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
+          <strong style="color:var(--navy2)">13 projetos</strong> concluíram a fase de Engenharia de Processos (FEL II) e transferiram a responsabilidade para Obras. A disciplina Obras passou de <strong>6 para 16 pendências ativas</strong> (+167%), enquanto Engenharia Processos caiu de 17 para 7 — sinal claro de que o campo está em movimento.
+        </div>
+      </div>
+
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:6px">Projetos Concluídos</div>
+        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
+          O portfólio saiu de <strong style="color:var(--navy2)">4 para 8 concluídos</strong> (+4 no período). Destaque para <strong>BLS-MLR-034 — Construção de Depósito de Cinzas</strong>, que era Crítico e estava na <strong>Onda 1</strong> em 08/Mai — concluído em 29/Mai após 184 dias de lead time total. Com sua saída, a <strong>Onda 1 reduziu de 9 para 8 projetos</strong>.
+        </div>
+      </div>
+
+      <div style="padding:16px 20px;border-bottom:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:6px">Redução de Críticos e Ondas</div>
+        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
+          Críticos abertos reduziram de <strong style="color:var(--navy2)">13 para 11</strong>. O total em aberto caiu de 39 para <strong>35 projetos (−4)</strong>: Onda 1 (9→8), Onda 2 (9→7), Onda 3 (13→12), Onda 4 (8→7). A redução de SDL otimizou CAPEX em <strong>−R$2,75mi</strong> via revisão de escopo em SDL-MLR-061.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ATENÇÃO -->
+  <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:12px">
+    <div style="background:var(--amber);padding:9px 18px">
+      <span style="font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">⚠ Pontos de Atenção</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0">
+
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:6px">11 Críticos Ainda Abertos</div>
+        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
+          Dos <strong style="color:var(--navy2)">11 críticos abertos</strong>, nenhum da Onda 2 foi encerrado no período — são os mais complexos e exigem ação imediata. A Onda 2 reduziu de 9 para 7 por conclusão de projetos no período — nenhum da própria Onda 2 foi encerrado diretamente.
+        </div>
+      </div>
+
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:6px">Atraso Estrutural</div>
+        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
+          <strong style="color:var(--navy2)">SNP-MLR-248 — Lançamento de Efluente Tratado por Emissário</strong> acumula <strong>217 dias de atraso</strong> — bloqueado por pendência de emissão do Plano de Exploração, sem responsável definido e sem previsão concreta de resolução. Exige decisão executiva imediata.
+        </div>
+      </div>
+
+      <div style="padding:16px 20px;border-bottom:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:6px">CAPEX Total Aumentou +R$1,97mi</div>
+        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
+          O CAPEX vigente subiu de R$42,43mi para <strong style="color:var(--navy2)">R$44,40mi (+4,7%)</strong> — reflexo direto das revisões de engenharia ao finalizar a FEL II. <strong>SNP</strong> teve o maior aumento: +R$2,00mi (+44,1%), puxado pelas revisões de SNP-MLR-294 (fertirrigação, +775%) e SNP-MLR-284 (+613%).
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AÇÕES -->
+  <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:10px">
+    <div style="background:var(--navy2);padding:9px 18px">
+      <span style="font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">→ Ações Prioritárias — Próximos 15 Dias</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+
+      <div style="padding:14px 20px;border-right:1px solid var(--gray-200)">
+        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px">
+          <div style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--navy2);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">1</div>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:3px">Mobilizar contratadas para os 13 projetos em FEL III</div>
+            <div style="font-size:12px;color:var(--gray-600);line-height:1.5">A engenharia entregou os projetos — a janela de mobilização está aberta. Cada semana sem contratação de MO atrasa o prazo de execução e aumenta risco de acumulação com a safra.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <div style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--navy2);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:3px">Fechar DRD-MLR-002 — Adequação CSAO do Posto Rodobras Dourados (99,4% executado) e DRD-MLR-123 — Implantação de Monge para Bacia Pluvial (desvio −6%)</div>
+            <div style="font-size:12px;color:var(--gray-600);line-height:1.5">Ambos com execução física quase concluída. O encerramento formal libera capacidade de fiscalização em Dourados e melhora os indicadores de conclusão da unidade.</div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="ft">INPASA Agroindustrial S/A · Planejamento &amp; Controle · Condicionantes Ambientais · Confidencial</div>
+  <div class="ft">Fonte: Monday.com Board #18409654427 · Ref. 04/Jun/2026 · Última sincronização: 04/06/2026 18:55 BRT</div>
+</div>
+
+
+<div style="position:fixed;bottom:24px;right:24px;z-index:999">
+  <button onclick="window.print()" style="background:var(--navy2);color:#fff;border:none;border-radius:8px;padding:11px 22px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 4px 12px rgba(15,23,42,.25);display:flex;align-items:center;gap:8px;letter-spacing:.02em">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Imprimir / Exportar PDF
+  </button>
+</div>
+</body>
+</html>
