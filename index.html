@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Report Executivo — Condicionantes Ambientais · INPASA · Jun/2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -16,42 +16,45 @@
   --gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--gray-700:#334155;
   --gray:#64748b;--gray-bg:#f1f5f9;
   --white:#fff;--text:#0f172a;--text-muted:#64748b;--border:#e2e8f0;--page-bg:#f4f6f9;
-  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
   --font-display:'Barlow Condensed',-apple-system,sans-serif;
   --shadow-card:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
-  --shadow-lg:0 4px 6px -1px rgba(15,23,42,.07),0 2px 4px -1px rgba(15,23,42,.04);
-  --r-sm:4px;--r-md:6px;--r-lg:8px;--r-xl:12px;
+  --r-lg:8px;--r-md:6px;--r-sm:4px;
+  --snp-c:#1e40af;--snp-bg:#dbeafe;
+  --nmt-c:#166534;--nmt-bg:#dcfce7;
+  --drd-c:#854d0e;--drd-bg:#fef9c3;
+  --sdl-c:#5b21b6;--sdl-bg:#ede9fe;
+  --bls-c:#991b1b;--bls-bg:#fee2e2;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-sans);background:var(--page-bg);color:var(--text);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased}
 
-/* ── TOPBAR ── */
-.topbar{background:var(--navy2);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(15,23,42,.18)}
-.topbar-brand{display:flex;align-items:center;gap:10px}
-.topbar-brand img{height:32px}
+/* TOPBAR */
+.topbar{background:var(--navy2);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(15,23,42,.18);print-color-adjust:exact}
 .topbar-title{color:rgba(255,255,255,.9);font-family:var(--font-display);font-size:16px;font-weight:700;letter-spacing:.3px}
-.topbar-badge{background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:var(--r-sm);letter-spacing:.3px}
+.topbar-badge{background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:3px 12px;border-radius:var(--r-sm);letter-spacing:.3px}
 
-/* ── PAGE ── */
-.page{max-width:1440px;margin:0 auto;padding:20px 24px 40px}
+/* PAGE */
+.page{max-width:1440px;margin:0 auto;padding:22px 28px 48px}
 
-/* ── HOME TITLE ── */
-.report-title{font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--navy2);line-height:1;margin-bottom:3px}
-.report-title em{font-style:italic;font-weight:500;color:var(--orange)}
-.report-sub{font-size:11px;color:var(--gray);margin-bottom:18px}
+/* REPORT TITLE */
+.rpt-title{font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--navy2);line-height:1;margin-bottom:3px}
+.rpt-title em{font-style:italic;font-weight:500;color:var(--orange)}
+.rpt-sub{font-size:11px;color:var(--gray);margin-bottom:18px}
 
-/* ── CALLOUT INSIGHT ── */
-.insight-box{background:var(--white);border:1px solid var(--gray-200);border-left:4px solid var(--navy2);border-radius:var(--r-lg);padding:13px 18px;margin-bottom:18px;font-size:13px;line-height:1.65;color:var(--gray-700);box-shadow:var(--shadow-card)}
-.insight-box strong{color:var(--navy2);font-weight:600}
+/* INSIGHT BOX */
+.insight{background:var(--white);border:1px solid var(--gray-200);border-left:4px solid var(--navy2);border-radius:var(--r-lg);padding:13px 18px;margin-bottom:18px;font-size:13px;line-height:1.65;color:var(--gray-700);box-shadow:var(--shadow-card)}
+.insight strong{color:var(--navy2);font-weight:600}
+.insight.green{border-left-color:var(--green)}
 
-/* ── KPI HERO ── */
-.kpi-hero{display:grid;grid-template-columns:1.2fr repeat(5,1fr);gap:10px;margin-bottom:18px}
+/* KPI HERO */
+.kpi-hero{display:grid;grid-template-columns:1.2fr repeat(5,1fr);gap:10px;margin-bottom:20px}
 .kpi-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:14px 16px;box-shadow:var(--shadow-card)}
 .kpi-card.primary{background:linear-gradient(135deg,var(--navy2),var(--navy3));border-color:var(--navy2)}
 .kpi-label{font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px}
 .kpi-card.primary .kpi-label{color:rgba(255,255,255,.7)}
-.kpi-value{font-family:var(--font-display);font-size:36px;font-weight:800;color:var(--navy2);line-height:1;margin:4px 0 3px;letter-spacing:-.02em}
-.kpi-card.primary .kpi-value{color:#fff;font-size:42px}
+.kpi-val{font-family:var(--font-display);font-size:38px;font-weight:800;color:var(--navy2);line-height:1;margin:4px 0 3px;letter-spacing:-.02em}
+.kpi-card.primary .kpi-val{color:#fff;font-size:44px}
 .kpi-sub{font-size:10px;color:var(--text-muted);line-height:1.3}
 .kpi-card.primary .kpi-sub{color:rgba(255,255,255,.75)}
 .kpi-delta{display:inline-block;padding:1px 7px;border-radius:10px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-top:4px}
@@ -59,61 +62,29 @@ body{font-family:var(--font-sans);background:var(--page-bg);color:var(--text);fo
 .kpi-delta.neg{background:var(--red-bg);color:var(--red)}
 .kpi-delta.neu{background:var(--gray-bg);color:var(--gray-600)}
 
-/* ── SECTION HEADER ── */
-.section-eyebrow{display:flex;align-items:center;gap:10px;margin:20px 0 10px}
-.section-eyebrow h3{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--navy2);text-transform:uppercase;letter-spacing:.6px;margin:0}
-.section-eyebrow .bar{flex:1;height:1px;background:linear-gradient(90deg,var(--gray-200),transparent)}
-.section-eyebrow .count-tag{font-size:10px;color:var(--gray);background:var(--white);border:1px solid var(--border);padding:2px 9px;border-radius:3px}
+/* SECTION HEADER */
+.sec-hdr{display:flex;align-items:center;gap:10px;margin:22px 0 10px}
+.sec-hdr h3{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--navy2);text-transform:uppercase;letter-spacing:.6px;margin:0}
+.sec-hdr .bar{flex:1;height:1px;background:linear-gradient(90deg,var(--gray-200),transparent)}
+.sec-hdr .tag{font-size:10px;color:var(--gray);background:var(--white);border:1px solid var(--border);padding:2px 9px;border-radius:3px}
 
-/* ── DISCIPLINE SHIFT CARD ── */
-.disc-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:18px}
-.disc-card-header{background:var(--navy2);padding:8px 16px;display:flex;align-items:center;justify-content:space-between}
-.disc-card-header span{font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px}
-.disc-card-body{display:grid;grid-template-columns:1fr auto 1fr;gap:0}
-.disc-col{padding:14px 18px}
-.disc-col.before{border-right:1px solid var(--gray-200)}
-.disc-period{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
-.disc-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.disc-name{font-size:12px;color:var(--gray-700);width:160px;flex-shrink:0}
-.disc-track{flex:1;height:9px;background:var(--gray-100);border-radius:3px;overflow:hidden}
-.disc-fill{height:9px;border-radius:3px}
-.fill-eng{background:var(--navy2)}
-.fill-obras{background:var(--green)}
-.fill-other{background:var(--gray-300)}
-.disc-num{font-size:11px;font-weight:700;width:24px;text-align:right}
-.disc-arrow-cell{display:flex;align-items:center;justify-content:center;padding:0 16px;background:var(--gray-50);font-size:24px;color:var(--green)}
-.disc-highlight{display:inline-block;background:var(--green-bg);color:var(--green);font-size:11px;font-weight:600;padding:4px 10px;border-radius:var(--r-sm);margin-top:10px}
+/* CARD */
+.card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;margin-bottom:14px}
+.card-hdr{background:var(--navy2);padding:9px 16px;display:flex;align-items:center;justify-content:space-between}
+.card-hdr h3{font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;letter-spacing:.4px;text-transform:uppercase}
+.card-hdr .sub{font-size:10px;color:rgba(255,255,255,.7)}
+.card-note{background:#fffbee;border-bottom:1px solid #f0d080;padding:8px 16px;font-size:12px;color:#5a3b00;line-height:1.6}
+.card-note strong{color:var(--navy2)}
 
-/* ── TABLE CARD ── */
-.tbl-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:18px}
-.tbl-header{background:var(--navy2);padding:9px 16px;display:flex;align-items:center;justify-content:space-between}
-.tbl-header h3{font-family:var(--font-display);font-size:14px;font-weight:700;color:#fff;letter-spacing:.3px}
-.tbl-header .sub{font-size:10px;color:rgba(255,255,255,.7);font-weight:400}
-.tbl-note{background:#fffbee;border-bottom:1px solid #f0d080;padding:8px 16px;font-size:12px;color:#5a3b00;line-height:1.6}
-.tbl-note strong{color:var(--navy2)}
-table.main{width:100%;border-collapse:collapse;font-size:12px}
-table.main thead tr{background:var(--gray-bg)}
-table.main th{padding:7px 12px;text-align:left;font-weight:700;color:var(--navy2);font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;border-bottom:2px solid var(--border);white-space:nowrap}
-table.main td{padding:8px 12px;border-bottom:1px solid var(--gray-100);vertical-align:middle;line-height:1.4}
-table.main tr:last-child td{border-bottom:none}
-table.main tr:hover td{background:var(--gray-50)}
-table.main tr.hl td{background:#f0faf3}
-table.main tr.hl:hover td{background:#e5f5eb}
-
-/* codes */
-.code{font-family:'SF Mono','Consolas',monospace;font-size:10.5px;font-weight:700;color:var(--navy2);background:var(--gray-bg);padding:2px 6px;border-radius:3px;border:1px solid var(--gray-300);white-space:nowrap}
-.pname{font-size:12px;font-weight:600;color:var(--text)}
-.pmeta{font-size:10px;color:var(--green);font-weight:600;margin-top:2px}
-
-/* unit badges */
+/* UNIT BADGE */
 .u{font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap;letter-spacing:.2px}
-.u-snp{background:#dbeafe;color:#1e40af}
-.u-nmt{background:#dcfce7;color:#166534}
-.u-drd{background:#fef9c3;color:#854d0e}
-.u-sdl{background:#ede9fe;color:#5b21b6}
-.u-bls{background:#fee2e2;color:#991b1b}
+.u-snp{background:var(--snp-bg);color:var(--snp-c)}
+.u-nmt{background:var(--nmt-bg);color:var(--nmt-c)}
+.u-drd{background:var(--drd-bg);color:var(--drd-c)}
+.u-sdl{background:var(--sdl-bg);color:var(--sdl-c)}
+.u-bls{background:var(--bls-bg);color:var(--bls-c)}
 
-/* status/prio badges */
+/* STATUS / PRIO BADGES */
 .b{font-size:9.5px;font-weight:600;padding:2px 7px;border-radius:3px;white-space:nowrap}
 .b-crit{background:var(--red-bg);color:var(--red)}
 .b-alto{background:var(--amber-bg);color:var(--amber)}
@@ -123,72 +94,54 @@ table.main tr.hl:hover td{background:#e5f5eb}
 .b-atr{background:var(--red-bg);color:var(--red)}
 .b-conc{background:#e0f2fe;color:#0369a1}
 
-/* FEL flow */
-.ff{display:flex;align-items:center;gap:3px;white-space:nowrap}
-.ff-from{font-size:9.5px;font-weight:600;padding:2px 6px;border-radius:3px;background:var(--gray-200);color:var(--gray-600)}
-.ff-to{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:3px;background:var(--navy2);color:#fff}
-.ff-to-iv{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:3px;background:#166534;color:#fff}
-.ff-arr{color:var(--gray-300);font-size:11px}
+.code{font-family:'SF Mono','Consolas',monospace;font-size:10.5px;font-weight:700;color:var(--navy2);background:var(--gray-bg);padding:2px 6px;border-radius:3px;border:1px solid var(--gray-300);white-space:nowrap}
 
-/* mini pipeline */
-.mp{display:flex;gap:2px;align-items:center}
-.mp span{font-size:8.5px;padding:2px 5px;border-radius:2px}
-.mp .done{background:var(--green-bg);color:var(--green);font-weight:600}
-.mp .curr{background:var(--navy2);color:#fff;font-weight:700}
-.mp .pend{background:var(--gray-200);color:var(--gray-500)}
-.mp .dot{color:var(--gray-300);font-size:9px;padding:0 1px}
+/* TABLES */
+table.tbl{width:100%;border-collapse:collapse;font-size:12px}
+table.tbl thead tr{background:var(--gray-bg)}
+table.tbl th{padding:7px 12px;text-align:left;font-weight:700;color:var(--navy2);font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;border-bottom:2px solid var(--border);white-space:nowrap}
+table.tbl td{padding:8px 12px;border-bottom:1px solid var(--gray-100);vertical-align:middle;line-height:1.4}
+table.tbl tr:last-child td{border-bottom:none}
+table.tbl tr:hover td{background:var(--gray-50)}
+table.tbl tr.hl td{background:#f0faf3}
 
-/* lead time */
-.lt{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap}
-.lt-lo{background:var(--green-bg);color:var(--green)}
-.lt-mi{background:var(--amber-bg);color:var(--amber)}
-.lt-hi{background:var(--red-bg);color:var(--red)}
+/* CHART BARS (pure CSS) */
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.bar-label{font-size:12px;color:var(--gray-700);width:180px;flex-shrink:0}
+.bar-label.bold{font-weight:700}
+.bar-label.eng{color:var(--navy2);font-weight:700}
+.bar-label.obras{color:var(--green);font-weight:700}
+.bar-track{flex:1;background:var(--gray-100);border-radius:3px;height:10px;overflow:hidden}
+.bar-fill{height:10px;border-radius:3px}
+.bf-navy{background:var(--navy2)}
+.bf-green{background:var(--green)}
+.bf-orange{background:var(--orange)}
+.bf-gray{background:var(--gray-300)}
+.bf-red{background:var(--red)}
+.bf-amber{background:#f0a500}
+.bf-teal{background:#0d9488}
+.bf-purple{background:#7c3aed}
+.bf-conc{background:#0ea5e9}
+.bar-num{font-size:11px;font-weight:700;width:28px;text-align:right}
 
-/* capex delta */
-.cap{display:flex;align-items:baseline;gap:5px;flex-wrap:wrap}
-.cap-old{font-size:10px;color:var(--text-muted);text-decoration:line-through}
-.cap-new{font-size:12px;font-weight:700;color:var(--text)}
-.cap-d{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px}
-.cap-up{background:var(--red-bg);color:var(--red)}
-.cap-dn{background:var(--green-bg);color:var(--green)}
-.cap-eq{background:var(--gray-bg);color:var(--gray-600)}
+/* STACKED BARS for units */
+.unit-bar-wrap{display:grid;grid-template-columns:80px 1fr 100px;align-items:center;gap:8px;margin-bottom:6px}
+.unit-badge-sm{font-size:10px;font-weight:700;padding:3px 8px;border-radius:3px;text-align:center}
+.stacked-track{height:18px;background:var(--gray-100);border-radius:4px;overflow:hidden;display:flex}
+.stk-atr{height:18px;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+.stk-and{height:18px;background:var(--navy2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+.stk-conc{height:18px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+.unit-stats{font-size:11px;color:var(--gray-600);display:flex;gap:10px;align-items:center}
 
-/* ── CONCLUDED CARDS ── */
-.conc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-bottom:18px}
-.cc{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:14px 16px;border-left:3px solid var(--green);box-shadow:var(--shadow-card)}
-.cc-head{display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap}
-.cc-name{font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:10px;line-height:1.4}
-.cc-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-bottom:4px}
-.cc-lbl{color:var(--text-muted)}
-.cc-val{font-weight:600;color:var(--text);text-align:right}
-.cc-total{margin-top:8px;padding-top:8px;border-top:1px solid var(--gray-200);display:flex;justify-content:space-between;align-items:center}
-.cc-tlbl{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-muted)}
-.cc-tval{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--green)}
-.cc-bar{height:5px;border-radius:3px;background:var(--gray-100);overflow:hidden;margin-top:8px;display:flex}
-.bar-i{background:#c8e6d3}.bar-ii{background:#5ebc88}.bar-iii{background:#1a7a3a}.bar-iv{background:#0d4d25}
-.cc-legend{display:flex;gap:10px;margin-top:5px;flex-wrap:wrap}
-.cc-leg{display:flex;align-items:center;gap:3px;font-size:9.5px;color:var(--text-muted)}
-.cc-leg-dot{width:8px;height:5px;border-radius:1px;flex-shrink:0}
+/* PHASE BARS */
+.phase-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.phase-lbl{font-size:11px;font-weight:600;width:55px;color:var(--gray-700)}
+.phase-track{flex:1;background:var(--gray-100);border-radius:3px;height:12px;overflow:hidden}
+.phase-fill{height:12px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff}
+.phase-num{font-size:12px;font-weight:700;width:20px}
 
-/* ── DELAY TABLE ── */
-.atr-fill-wrap{display:flex;align-items:center;gap:6px}
-.atr-track{flex:1;height:5px;background:var(--gray-100);border-radius:3px;overflow:hidden;min-width:40px}
-.atr-fill{height:5px;background:var(--red);border-radius:3px}
-.atr-days{font-size:10.5px;font-weight:700;color:var(--red);white-space:nowrap}
-
-/* ── CAPEX PER UNIT ── */
-.cx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:18px}
-.cx{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:12px 14px;box-shadow:var(--shadow-card)}
-.cx-unit{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.cx-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px}
-.cx-lbl{font-size:10px;color:var(--text-muted)}
-.cx-val{font-size:12px;font-weight:700;color:var(--text)}
-.cx-delta{font-size:10px;font-weight:600;margin-top:6px;padding-top:6px;border-top:1px solid var(--gray-200);display:flex;justify-content:space-between}
-.cx-track{height:4px;background:var(--gray-100);border-radius:2px;overflow:hidden;margin-top:6px}
-.cx-prog{height:4px;border-radius:2px}
-
-/* ── WAVES ── */
-.waves-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;margin-bottom:10px}
+/* ONDA CARDS */
+.wave-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--gray-200);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;margin-bottom:10px}
 .wave{background:var(--white);padding:12px 14px}
 .wave-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:4px}
 .wave-val{font-family:var(--font-display);font-size:24px;font-weight:800;color:var(--navy2);line-height:1}
@@ -198,791 +151,911 @@ table.main tr.hl:hover td{background:#e5f5eb}
 .wave-delta.neu{background:var(--gray-bg);color:var(--gray-600)}
 .wave-sub{font-size:10px;color:var(--text-muted);margin-top:2px}
 
-/* ── SUMMARY PANELS ── */
-.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:10px}
-.sum-panel{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:16px 18px;box-shadow:var(--shadow-card)}
-.sum-panel.green{border-top:3px solid var(--green)}
-.sum-panel.amber{border-top:3px solid var(--amber)}
-.sum-panel.blue{border-top:3px solid var(--navy2)}
-.sum-title{font-family:var(--font-display);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px}
-.sum-panel.green .sum-title{color:var(--green)}
-.sum-panel.amber .sum-title{color:var(--amber)}
-.sum-panel.blue  .sum-title{color:var(--navy2)}
-.sum-li{display:flex;gap:7px;margin-bottom:7px;font-size:12px;color:var(--gray-600);line-height:1.5}
-.sum-li::before{content:'•';flex-shrink:0;font-weight:700;margin-top:1px}
-.sum-panel.green .sum-li::before{color:var(--green)}
-.sum-panel.amber .sum-li::before{color:var(--amber)}
-.sum-panel.blue  .sum-li::before{color:var(--navy2)}
-.sum-li strong{color:var(--navy2);font-weight:700}
+/* DISCIPLINA SHIFT */
+.disc-grid{display:grid;grid-template-columns:1fr 60px 1fr}
+.disc-col{padding:14px 18px}
+.disc-col.before{border-right:1px solid var(--gray-200)}
+.disc-period{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
+.disc-arrow-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:34px;background:var(--gray-50);gap:0}
+.disc-arrow-row{height:31px;display:flex;align-items:center;justify-content:center;width:100%}
+.disc-hl-eng{background:#eef3fb;border-radius:4px;padding:2px 6px;margin-left:-4px}
+.disc-hl-obras{background:#edf7f0;border-radius:4px;padding:2px 6px;margin-left:-4px}
 
-/* ── FOOTER ── */
-.footer{padding:14px 24px;border-top:1px solid var(--gray-200);background:var(--white);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:32px}
+/* CONCLUDED CARDS */
+.conc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:14px;align-items:stretch}
+.cc{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:14px 16px;border-left:4px solid var(--green);box-shadow:var(--shadow-card);display:flex;flex-direction:column;min-height:0}
+.cc-head{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.cc-name{font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:8px;line-height:1.4}
+.cc-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-bottom:4px}
+.cc-lbl{color:var(--text-muted)}
+.cc-val{font-weight:600;color:var(--text);text-align:right}
+.cc-obs{margin-top:8px;padding:7px 10px;background:#fffbee;border:1px solid #f0d080;border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:11px;color:#5a3b00;line-height:1.6}
+.cc-obs strong{font-weight:600}
+
+/* ONDA TABLE — dates comparison */
+.onda-section{margin-bottom:18px}
+.onda-title-bar{background:linear-gradient(90deg,var(--navy2),var(--navy3));padding:10px 18px;border-radius:var(--r-lg) var(--r-lg) 0 0;display:flex;align-items:center;justify-content:space-between}
+.onda-title-bar h4{font-family:var(--font-display);font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px}
+.onda-title-bar .count{font-size:11px;color:rgba(255,255,255,.75)}
+
+/* CAPEX CARDS */
+.cx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:14px}
+.cx{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:12px 14px;box-shadow:var(--shadow-card)}
+.cx-unit{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.cx-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px}
+.cx-lbl{font-size:10px;color:var(--text-muted)}
+.cx-val{font-size:12px;font-weight:700;color:var(--text)}
+.cx-delta{font-size:10px;font-weight:600;margin-top:6px;padding-top:6px;border-top:1px solid var(--gray-200);display:flex;justify-content:space-between}
+.cx-track{height:4px;background:var(--gray-100);border-radius:2px;overflow:hidden;margin-top:6px}
+.cx-prog{height:4px;border-radius:2px}
+
+/* SYNTHESIS */
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-bottom:10px}
+.sum-panel{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:0;box-shadow:var(--shadow-card);overflow:hidden}
+.sum-panel-hdr{padding:9px 18px}
+.sum-panel-hdr.green{background:var(--green)}
+.sum-panel-hdr.amber{background:var(--amber)}
+.sum-panel-hdr.blue{background:var(--navy2)}
+.sum-panel-hdr span{font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px}
+.sum-body{padding:14px 18px}
+.sum-grid-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.sum-cell{padding:12px 16px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.sum-cell:nth-child(2n){border-right:none}
+.sum-cell:nth-last-child(-n+2){border-bottom:none}
+.sum-cell-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.sum-cell.green .sum-cell-title{color:var(--green)}
+.sum-cell.amber .sum-cell-title{color:var(--amber)}
+.sum-cell.blue  .sum-cell-title{color:var(--navy2)}
+.sum-cell p{font-size:12px;color:var(--gray-600);line-height:1.55}
+.sum-cell p strong{color:var(--navy2);font-weight:700}
+
+/* ACTION ITEMS */
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.action-item{padding:14px 18px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.action-item:nth-child(2n){border-right:none}
+.action-item:nth-last-child(-n+2){border-bottom:none}
+.action-num{width:22px;height:22px;border-radius:50%;background:var(--navy2);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.action-title{font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:3px}
+.action-body{font-size:12px;color:var(--gray-600);line-height:1.5}
+
+/* PRINT BUTTON */
+.print-btn{position:fixed;bottom:24px;right:24px;z-index:999;background:var(--navy2);color:#fff;border:none;border-radius:8px;padding:11px 22px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 4px 12px rgba(15,23,42,.25);display:flex;align-items:center;gap:8px;letter-spacing:.02em}
+
+/* FEL flow tags */
+.ff{display:flex;align-items:center;gap:3px;white-space:nowrap}
+.ff-from{font-size:9.5px;font-weight:600;padding:2px 6px;border-radius:3px;background:var(--gray-200);color:var(--gray-600)}
+.ff-to{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:3px;background:var(--navy2);color:#fff}
+.ff-arr{color:var(--gray-300);font-size:11px}
+.lt{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.lt-lo{background:var(--green-bg);color:var(--green)}
+.lt-mi{background:var(--amber-bg);color:var(--amber)}
+.lt-hi{background:var(--red-bg);color:var(--red)}
+
+/* FOOTER */
+.footer{padding:14px 28px;border-top:1px solid var(--gray-200);background:var(--white);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .ft{font-size:10px;color:var(--text-muted)}
 
-@media print {
-  @page {
-    size: A3 landscape;
-    margin: 12mm 10mm;
-  }
-  body { font-size: 11px; background: #fff !important; }
-  .topbar { position: static !important; box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  /* floating print button */
-  div[style*="position:fixed"] { display: none !important; }
-  /* avoid breaking inside cards and rows */
-  .cc, .wave, .cx, .tbl-card, .disc-card, .kpi-card { break-inside: avoid; }
-  table.main tr { break-inside: avoid; }
-  /* force colors to print */
-  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  /* page breaks between major sections */
-  .section-eyebrow { break-before: auto; }
-  /* reduce padding for print */
-  .page { padding: 8px 10px 20px; }
-  .kpi-hero { grid-template-columns: repeat(6,1fr); }
-  .conc-grid { grid-template-columns: repeat(3,1fr); }
-  .cx-grid   { grid-template-columns: repeat(5,1fr); }
-  .waves-grid{ grid-template-columns: repeat(5,1fr); }
+/* ATRASO BAR */
+.atr-wrap{display:flex;align-items:center;gap:6px}
+.atr-track{flex:1;height:5px;background:var(--gray-100);border-radius:3px;overflow:hidden;min-width:36px}
+.atr-fill{height:5px;background:var(--red);border-radius:3px}
+.atr-days{font-size:10.5px;font-weight:700;color:var(--red);white-space:nowrap}
+
+@media print{
+  @page{size:A3 landscape;margin:10mm 8mm}
+  body{font-size:11px;background:#fff !important}
+  .print-btn{display:none !important}
+  .topbar{position:static !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+  .card,.cc,.wave,.cx,.kpi-card,.sum-panel{break-inside:avoid}
+  table.tbl tr{break-inside:avoid}
+  .page{padding:8px 10px 20px}
+  .kpi-hero{grid-template-columns:repeat(6,1fr)}
+  .conc-grid{grid-template-columns:repeat(3,1fr)}
+  .cx-grid{grid-template-columns:repeat(5,1fr)}
+  .wave-grid{grid-template-columns:repeat(5,1fr)}
 }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
-  <div class="topbar-brand">
-    <div class="topbar-title">INPASA Agroindustrial S/A — Report Executivo · Condicionantes Ambientais</div>
-  </div>
+  <div class="topbar-title">INPASA Agroindustrial S/A — Report Executivo · Condicionantes Ambientais</div>
   <div class="topbar-badge">Ref. 04/Jun/2026</div>
 </div>
 
-<!-- PAGE -->
 <div class="page">
 
-  <div class="report-title fade"><em>Avanços do Portfólio</em> · Condicionantes Ambientais</div>
-  <div class="report-sub">Análise comparativa 08/Mai/2026 → 04/Jun/2026 &nbsp;·&nbsp; 5 unidades · 43 projetos ativos · Board #18409654427</div>
+  <div class="rpt-title"><em>Avanços do Portfólio</em> · Condicionantes Ambientais</div>
+  <div class="rpt-sub">Análise comparativa 08/Mai/2026 → 04/Jun/2026 &nbsp;·&nbsp; 5 unidades · 43 projetos ativos · Board #18409654427</div>
 
-  <!-- INSIGHT -->
-  <div class="insight-box">
-    <strong>Leitura executiva do período:</strong> Em 27 dias o portfólio saiu de 4 para <strong>8 projetos concluídos</strong>, transferiu <strong>13 projetos de Engenharia de Processos para Obras</strong> e reduziu os críticos abertos de 13 para 11. A disciplina de <strong>Obras passou de 6 para 16 pendências ativas</strong> — o que representa, na prática, o descarregamento da engenharia e a mobilização do campo. O número de atrasos no board reflete reprogramação de prazo base, não paralisação — a maioria dos projetos em atraso tem obra em andamento ou conclusão iminente.
+  <div class="insight">
+    <strong>Leitura executiva do período:</strong> Em 27 dias o portfólio saiu de 4 para <strong>8 projetos concluídos</strong>, transferiu <strong>13 projetos de Engenharia de Processos para Obras</strong> e reduziu os críticos abertos de 13 para 11. A disciplina de <strong>Obras passou de 6 para 16 pendências ativas</strong> — sinal claro de que o campo está em movimento. O total em aberto caiu de 39 para 35 (−4).
   </div>
 
   <!-- KPI HERO -->
-  <div class="kpi-hero">
+  <div class="kpi-hero" style="grid-template-columns:1.2fr repeat(3,1fr)">
     <div class="kpi-card primary">
       <div class="kpi-label">Portfólio Ativo</div>
-      <div class="kpi-value">43</div>
+      <div class="kpi-val">43</div>
       <div class="kpi-sub">5 unidades · Board #18409654427</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Concluídos</div>
-      <div class="kpi-value" style="color:var(--green)">8</div>
-      <div class="kpi-sub">↑ +4 vs 08/Mai</div>
+      <div class="kpi-val" style="color:var(--green)">8</div>
+      <div class="kpi-sub">↑ +4 vs 08/Mai (eram 4)</div>
       <div class="kpi-delta pos">+100%</div>
     </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Em Atraso</div>
-      <div class="kpi-value" style="color:var(--red)">14</div>
-      <div class="kpi-sub">↓ −1 vs 08/Mai (15)</div>
-      <div class="kpi-delta pos">Melhorou</div>
+    <div class="kpi-card" style="border-top:3px solid var(--green)">
+      <div class="kpi-label">Onda 1 · FEL IV em Execução</div>
+      <div class="kpi-val" style="color:var(--navy2)">8</div>
+      <div class="kpi-sub">↓ −1 vs 08/Mai (9)</div>
+      <div class="kpi-delta pos">BLS-MLR-034 concluído</div>
     </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Críticos Abertos</div>
-      <div class="kpi-value" style="color:var(--red)">11</div>
-      <div class="kpi-sub">↓ −2 vs 08/Mai (13)</div>
-      <div class="kpi-delta pos">Melhorou</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Avançaram FEL II→III</div>
-      <div class="kpi-value" style="color:var(--navy2)">13</div>
-      <div class="kpi-sub">Engenharia → Obras</div>
-      <div class="kpi-delta neu">Período</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">CAPEX Vigente</div>
-      <div class="kpi-value" style="font-size:22px;color:var(--amber)">R$44,40mi</div>
-      <div class="kpi-sub">↑ +R$1,97mi vs 08/Mai</div>
-      <div class="kpi-delta neg">+4,7%</div>
+    <div class="kpi-card" style="border-top:3px solid var(--amber)">
+      <div class="kpi-label">Onda 2 · Críticos — Ataque Imediato</div>
+      <div class="kpi-val" style="color:var(--amber)">7</div>
+      <div class="kpi-sub">↓ −2 vs 08/Mai (9)</div>
+      <div class="kpi-delta pos">4 avançaram FEL II→III</div>
     </div>
   </div>
 
-  <!-- ═══ 1. TRANSFERÊNCIA DISCIPLINA ═══ -->
-  <div class="section-eyebrow">
-    <h3>1 · Transferência de Engenharia para Obras</h3>
+  <!-- SEÇÃO 1 -->
+  <div class="sec-hdr">
+    <h3>1 · Visão Geral — Pendências por Unidade, Disciplina e Fase</h3>
     <div class="bar"></div>
-    <div class="count-tag">Disciplina responsável por pendência · 08/Mai vs 04/Jun/2026</div>
+    <div class="tag">Comparativo 08/Mai → 04/Jun/2026 · Total portfólio: 43 projetos</div>
   </div>
 
-  <div class="disc-card">
-    <div class="disc-card-header">
-      <span>Pendências por Disciplina — Antes e Depois</span>
-      <span style="font-size:10px;font-weight:400;color:rgba(255,255,255,.7)">Eng. Processos: 17 → 7 &nbsp;|&nbsp; Obras: 6 → 16</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px">
+
+    <div class="card">
+      <div class="card-hdr"><h3>Pendências por Filial (Status)</h3><span class="sub">08/Mai vs 04/Jun · Atraso · Andamento · Concluídos</span></div>
+      <div style="padding:16px 18px">
+        <div style="display:flex;gap:14px;margin-bottom:12px;font-size:11px;flex-wrap:wrap">
+          <span style="display:flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:var(--red);border-radius:2px;display:inline-block"></span>Em Atraso</span>
+          <span style="display:flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:var(--navy2);border-radius:2px;display:inline-block"></span>Em Andamento</span>
+          <span style="display:flex;align-items:center;gap:5px"><span style="width:12px;height:12px;background:var(--green);border-radius:2px;display:inline-block"></span>Concluídos</span>
+        </div>
+        
+        <div style="margin-bottom:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+            <span class="u u-snp" style="font-size:11px;padding:4px 12px">SNP — Sinop</span>
+            <span style="font-size:11px"><span style="color:var(--green);font-weight:700">1 concluído</span></span>
+          </div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">08/Mai — 10 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:30%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">3</div><div style="background:var(--navy2);width:70%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">7</div></div>
+          <div style="text-align:left;padding-left:8px;color:var(--green);font-size:14px;line-height:1.4;margin:2px 0">↓</div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">04/Jun — 10 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:40%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">4</div><div style="background:var(--navy2);width:50%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">5</div><div style="background:var(--green);width:10%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">1</div></div>
+        </div>
+        <div style="margin-bottom:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+            <span class="u u-nmt" style="font-size:11px;padding:4px 12px">NMT — Nova Mutum</span>
+            <span style="font-size:11px"><span style="color:var(--green);font-weight:700">1 concluído</span></span>
+          </div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">08/Mai — 10 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:20%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">2</div><div style="background:var(--navy2);width:60%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">6</div><div style="background:var(--green);width:20%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">2</div></div>
+          <div style="text-align:left;padding-left:8px;color:var(--text-muted);font-size:14px;line-height:1.4;margin:2px 0">↓</div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">04/Jun — 10 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:20%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">2</div><div style="background:var(--navy2);width:70%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">7</div><div style="background:var(--green);width:10%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">1</div></div>
+        </div>
+        <div style="margin-bottom:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+            <span class="u u-drd" style="font-size:11px;padding:4px 12px">DRD — Dourados</span>
+            <span style="font-size:11px"><span style="color:var(--green);font-weight:700">1 concluído</span></span>
+          </div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">08/Mai — 8 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:12%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">1</div><div style="background:var(--navy2);width:75%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">6</div><div style="background:var(--green);width:12%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">1</div></div>
+          <div style="text-align:left;padding-left:8px;color:var(--text-muted);font-size:14px;line-height:1.4;margin:2px 0">↓</div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">04/Jun — 8 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:25%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">2</div><div style="background:var(--navy2);width:62%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">5</div><div style="background:var(--green);width:12%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">1</div></div>
+        </div>
+        <div style="margin-bottom:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+            <span class="u u-sdl" style="font-size:11px;padding:4px 12px">SDL — Sidrolândia</span>
+            <span style="font-size:11px"><span style="color:var(--text-muted)">sem concluídos</span></span>
+          </div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">08/Mai — 7 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:29%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">2</div><div style="background:var(--navy2);width:71%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">5</div></div>
+          <div style="text-align:left;padding-left:8px;color:var(--text-muted);font-size:14px;line-height:1.4;margin:2px 0">↓</div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">04/Jun — 7 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:57%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">4</div><div style="background:var(--navy2);width:43%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">3</div></div>
+        </div>
+        <div style="margin-bottom:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+            <span class="u u-bls" style="font-size:11px;padding:4px 12px">BLS — Balsas</span>
+            <span style="font-size:11px"><span style="color:var(--green);font-weight:700">7 concluídos</span></span>
+          </div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">08/Mai — 10 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:40%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">4</div><div style="background:var(--navy2);width:50%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">5</div><div style="background:var(--green);width:10%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">1</div></div>
+          <div style="text-align:left;padding-left:8px;color:var(--green);font-size:14px;line-height:1.4;margin:2px 0">↓</div>
+          
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px;font-weight:600">04/Jun — 10 projetos</div>
+            <div style="display:flex;height:24px;border-radius:4px;overflow:hidden"><div style="background:var(--red);width:20%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">2</div><div style="background:var(--navy2);width:10%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">1</div><div style="background:var(--green);width:70%;height:24px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">7</div></div>
+        </div>
+      </div>
     </div>
-    <!-- grade alinhada: mesma ordem nas duas colunas, setas no meio evidenciando o movimento -->
-    <div style="display:grid;grid-template-columns:1fr 72px 1fr">
 
-      <!-- ANTES -->
-      <div style="padding:16px 20px;border-right:1px solid var(--gray-200)">
-        <div class="disc-period">08/Mai/2026</div>
-        <!-- linha 1: Eng.Proc — destaque azul -->
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;background:#eef3fb;border-radius:4px;padding:3px 6px 3px 6px;margin-left:-6px">
-          <span style="font-size:12px;font-weight:700;color:var(--navy2);width:162px;flex-shrink:0">Engenharia Processos</span>
-          <div class="disc-track"><div class="disc-fill fill-eng" style="width:100%"></div></div>
-          <span style="font-size:11px;font-weight:700;color:var(--navy2);width:24px;text-align:right">17</span>
+    <div class="card">
+      <div class="card-hdr"><h3>Pendências por Disciplina</h3><span class="sub">08/Mai vs 04/Jun/2026</span></div>
+      <div style="padding:16px 18px">
+        
+      <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;margin-bottom:10px">
+        <div style="font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em">08/Mai</div>
+        <div></div>
+        <div style="font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em">04/Jun</div>
+      </div>
+      <div style="margin-bottom:9px;background:#eef3fb;border-radius:5px;padding:5px 8px;margin:0 -8px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;font-weight:700;color:var(--navy2)">Engenharia Processos</span>
+          <span style="font-size:12px;font-weight:700;color:var(--green)">17 ↓ 7</span>
         </div>
-        <!-- linha 2: Obras — destaque verde -->
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;background:#edf7f0;border-radius:4px;padding:3px 6px 3px 6px;margin-left:-6px">
-          <span style="font-size:12px;font-weight:700;color:var(--green);width:162px;flex-shrink:0">Obras</span>
-          <div class="disc-track"><div class="disc-fill fill-obras" style="width:35%"></div></div>
-          <span style="font-size:11px;font-weight:700;color:var(--green);width:24px;text-align:right">6</span>
-        </div>
-        <!-- demais -->
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
-          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Processo</span>
-          <div class="disc-track"><div class="disc-fill fill-other" style="width:35%"></div></div>
-          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">6</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
-          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Meio Ambiente</span>
-          <div class="disc-track"><div class="disc-fill fill-other" style="width:35%"></div></div>
-          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">6</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px">
-          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Outros (4 disc.)</span>
-          <div class="disc-track"><div class="disc-fill fill-other" style="width:24%"></div></div>
-          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">4</span>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--navy2);width:100%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">17</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--green)">↓</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--navy2);width:41%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">7</span></div></div>
         </div>
       </div>
-
-      <!-- SETAS DO MEIO — alinhadas com as linhas 1 e 2 -->
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:32px;background:var(--gray-50);gap:0">
-        <!-- seta 1: Eng.Proc caiu -->
-        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
-          <span style="font-size:11px;font-weight:700;color:var(--navy2);display:flex;align-items:center;gap:2px">
-            <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M2 7h13M11 2l5 5-5 5" stroke="#124E81" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+      <div style="margin-bottom:9px;background:#edf7f0;border-radius:5px;padding:5px 8px;margin:0 -8px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;font-weight:700;color:var(--green)">Obras</span>
+          <span style="font-size:12px;font-weight:700;color:var(--red)">6 ↑ 16</span>
         </div>
-        <!-- seta 2: Obras subiu -->
-        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
-          <span style="font-size:11px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:2px">
-            <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M2 7h13M11 2l5 5-5 5" stroke="#609346" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </div>
-        <!-- seta 3,4,5: demais -->
-        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h11M9 1l4 4-4 4" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h11M9 1l4 4-4 4" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div style="height:31px;display:flex;align-items:center;justify-content:center;width:100%">
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5h11M9 1l4 4-4 4" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--green);width:35%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">6</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--red)">↑</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--green);width:94%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">16</span></div></div>
         </div>
       </div>
-
-      <!-- DEPOIS — mesma ordem das linhas -->
-      <div style="padding:16px 20px">
-        <div class="disc-period">04/Jun/2026</div>
-        <!-- linha 1: Eng.Proc — caiu, destaque azul com número menor -->
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;background:#eef3fb;border-radius:4px;padding:3px 6px 3px 6px;margin-left:-6px">
-          <span style="font-size:12px;font-weight:700;color:var(--navy2);width:162px;flex-shrink:0">Engenharia Processos</span>
-          <div class="disc-track"><div class="disc-fill fill-eng" style="width:44%"></div></div>
-          <span style="font-size:11px;font-weight:700;color:var(--navy2);width:24px;text-align:right">7</span>
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">Processo</span>
+          <span style="font-size:12px;font-weight:700;color:var(--green)">6 ↓ 3</span>
         </div>
-        <!-- linha 2: Obras — subiu, destaque verde com número maior -->
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;background:#edf7f0;border-radius:4px;padding:3px 6px 3px 6px;margin-left:-6px">
-          <span style="font-size:12px;font-weight:700;color:var(--green);width:162px;flex-shrink:0">Obras</span>
-          <div class="disc-track"><div class="disc-fill fill-obras" style="width:100%"></div></div>
-          <span style="font-size:11px;font-weight:700;color:var(--green);width:24px;text-align:right">16</span>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:35%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">6</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--green)">↓</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:18%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">3</span></div></div>
         </div>
-        <!-- demais -->
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
-          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Processo</span>
-          <div class="disc-track"><div class="disc-fill fill-other" style="width:19%"></div></div>
-          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">3</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
-          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Meio Ambiente</span>
-          <div class="disc-track"><div class="disc-fill fill-other" style="width:19%"></div></div>
-          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">3</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-          <span style="font-size:12px;color:var(--gray-600);width:162px;flex-shrink:0">Outros (5 disc.)</span>
-          <div class="disc-track"><div class="disc-fill fill-other" style="width:44%"></div></div>
-          <span style="font-size:11px;font-weight:700;width:24px;text-align:right">7</span>
-        </div>
-        <span class="disc-highlight">+10 projetos chegaram à disciplina Obras</span>
       </div>
-
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">Meio Ambiente</span>
+          <span style="font-size:12px;font-weight:700;color:var(--green)">6 ↓ 3</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:35%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">6</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--green)">↓</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:18%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">3</span></div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">Suprimentos</span>
+          <span style="font-size:12px;font-weight:700;color:var(--red)">1 ↑ 2</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:#f0a500;width:6%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">1</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--red)">↑</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:#f0a500;width:12%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">2</span></div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">Engenharia EIA</span>
+          <span style="font-size:12px;font-weight:700;color:var(--red)">0 ↑ 2</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--red)">↑</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:#0d9488;width:12%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">2</span></div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">Agrário</span>
+          <span style="font-size:12px;font-weight:700;color:var(--gray-400)">1 = 1</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:6%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">1</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--gray-400)">=</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:6%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">1</span></div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">Caldeira</span>
+          <span style="font-size:12px;font-weight:700;color:var(--gray-400)">1 = 1</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:6%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">1</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--gray-400)">=</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:6%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">1</span></div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">Manutenção</span>
+          <span style="font-size:12px;font-weight:700;color:var(--gray-400)">1 = 1</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:6%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">1</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--gray-400)">=</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:var(--gray-300);width:6%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">1</span></div></div>
+        </div>
+      </div>
+      <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);margin-bottom:8px">Concluídos — evolução</div>
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">08/Mai/2026</span>
+          <span style="font-size:12px;font-weight:700;color:var(--gray-400)">4 = 4</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:#0ea5e9;width:24%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">4</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--gray-400)">=</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:#0ea5e9;width:24%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">4</span></div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:9px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:12px;color:var(--gray-700)">04/Jun/2026</span>
+          <span style="font-size:12px;font-weight:700;color:var(--gray-400)">8 = 8</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:4px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:#0ea5e9;width:47%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">8</span></div></div>
+          <div style="text-align:center;font-size:13px;font-weight:700;color:var(--gray-400)">=</div>
+          <div style="background:var(--gray-100);border-radius:3px;height:14px;overflow:hidden"><div style="background:#0ea5e9;width:47%;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff;padding:0 4px">8</span></div></div>
+        </div>
+      </div></div>
+      </div>
     </div>
+
+    <div class="card">
+      <div class="card-hdr"><h3>Status por Fase — Gargalo FEL</h3><span class="sub">08/Mai vs 04/Jun/2026 · Total: 43 projetos</span></div>
+      <div style="padding:16px 18px">
+        
+      <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:5px;margin-bottom:10px">
+        <div style="font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em">08/Mai</div>
+        <div></div>
+        <div style="font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em">04/Jun</div>
+      </div>
+      <div style="margin-bottom:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:13px;font-weight:700;color:var(--gray-700)">FEL I</span>
+          <span style="font-size:12px;font-weight:700;color:var(--gray-400)">2 = 2</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:5px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--gray-400);width:9%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">2</span></div>
+          </div>
+          <div style="text-align:center;font-size:14px;font-weight:700;color:var(--gray-400)">=</div>
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--gray-400);width:9%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">2</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:13px;font-weight:700;font-weight:700;color:var(--orange)">FEL II</span>
+          <span style="font-size:12px;font-weight:700;color:var(--green)">22 ↓ 17</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:5px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--orange);width:100%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">22</span></div>
+          </div>
+          <div style="text-align:center;font-size:14px;font-weight:700;color:var(--green)">↓</div>
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--orange);width:77%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">17</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:13px;font-weight:700;color:var(--gray-700)">FEL III</span>
+          <span style="font-size:12px;font-weight:700;color:var(--red)">6 ↑ 13</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:5px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--navy2);width:27%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">6</span></div>
+          </div>
+          <div style="text-align:center;font-size:14px;font-weight:700;color:var(--red)">↑</div>
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--navy2);width:59%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">13</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:13px;font-weight:700;color:var(--gray-700)">FEL IV</span>
+          <span style="font-size:12px;font-weight:700;color:var(--gray-400)">6 = 6</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:5px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--navy3);width:27%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">6</span></div>
+          </div>
+          <div style="text-align:center;font-size:14px;font-weight:700;color:var(--gray-400)">=</div>
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--navy3);width:27%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">6</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:13px;font-weight:700;color:var(--gray-700)">FEL V</span>
+          <span style="font-size:12px;font-weight:700;color:var(--gray-400)">2 = 2</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:5px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--gray-700);width:9%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">2</span></div>
+          </div>
+          <div style="text-align:center;font-size:14px;font-weight:700;color:var(--gray-400)">=</div>
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:var(--gray-700);width:9%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">2</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-size:13px;font-weight:700;color:var(--gray-700)">Outros</span>
+          <span style="font-size:12px;font-weight:700;color:var(--green)">5 ↓ 3</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 22px 1fr;gap:5px;align-items:center">
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:#9333ea;width:23%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">5</span></div>
+          </div>
+          <div style="text-align:center;font-size:14px;font-weight:700;color:var(--green)">↓</div>
+          <div style="background:var(--gray-100);border-radius:4px;height:18px;overflow:hidden;display:flex;align-items:center">
+            <div style="background:#9333ea;width:14%;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center"><span style="font-size:10px;font-weight:700;color:#fff">3</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:10px;color:var(--text-muted);font-style:italic">Outros = projetos em fase Estudo / sem classificação FEL (poços captação, POC)</div>
+      <div style="margin-top:10px;background:#edf7f0;border-radius:var(--r-sm);padding:10px 12px;font-size:12px;color:#1a4a28;line-height:1.6">
+        <strong>Avanço no período:</strong> FEL II reduziu de 22 para 17 projetos.<br>
+        <strong>13 projetos saíram do FEL II</strong> — engenharia finalizada, projetos emitidos, responsabilidade transferida para Obras.<br>
+        <span style="color:var(--navy2);font-weight:600">FEL III = liberado para contratação e execução.</span>
+      </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- ═══ 5. ONDAS ═══ -->
-  <div class="section-eyebrow">
+    <!-- ══════════════════════════════════════════════════════════
+       SEÇÃO 2 — ONDAS DE PRIORIDADE (OVERVIEW + DETALHAMENTO)
+       ══════════════════════════════════════════════════════════ -->
+  <div class="sec-hdr">
     <h3>2 · Ondas de Prioridade — Plano de Ataque</h3>
     <div class="bar"></div>
-    <div class="count-tag">Variação 08/Mai → 04/Jun/2026</div>
+    <div class="tag">Variação 08/Mai → 04/Jun/2026</div>
   </div>
 
-  <div class="waves-grid">
-    <div class="wave" style="border-top:3px solid var(--green)">
-      <div class="wave-lbl">Onda 1 · FEL IV</div>
-      <div class="wave-val">8</div>
-      <div class="wave-delta pos">↓−1 vs 08/Mai (9)</div>
-      <div class="wave-sub">Em execução · não para</div>
-      <div style="margin-top:8px;font-size:10px;line-height:1.5;color:var(--text-muted)">
-        <span style="color:var(--red);font-weight:600">▼ BLS-MLR-034</span> concluído — saiu da Onda 1
+  <!-- OVERVIEW CARDS — Onda 1 e 2 lado a lado -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:6px">
+
+    <!-- ONDA 1 -->
+    <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);border-top:4px solid var(--green);padding:16px 18px;box-shadow:var(--shadow-card)">
+      <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--green);margin-bottom:8px">▶ Onda 1 · FEL IV em Execução</div>
+      <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:14px;background:var(--gray-50);border-radius:6px;padding:10px 12px">
+        <div style="text-align:center">
+          <div style="font-size:9px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">08/Mai — Total</div>
+          <div style="font-family:var(--font-display);font-size:32px;font-weight:800;color:var(--gray-600);line-height:1">9</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">projetos ativos</div>
+        </div>
+        <div style="text-align:center;font-size:20px;color:var(--green);font-weight:700">→</div>
+        <div style="text-align:center;background:var(--green-bg);border-radius:6px;padding:6px 10px">
+          <div style="font-size:9px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">04/Jun — Total</div>
+          <div style="font-family:var(--font-display);font-size:32px;font-weight:800;color:var(--navy2);line-height:1">8</div>
+          <div style="font-size:10px;color:var(--green);font-weight:600;margin-top:2px">projetos ativos</div>
+        </div>
+      </div>
+      <!-- Status dos 9 projetos: 1 saiu + 8 ativos -->
+      <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:6px;padding:10px 12px;margin-bottom:10px">
+        <div style="font-size:9px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Status dos 9 projetos em 04/Jun</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+          <div style="background:var(--red-bg);border-radius:5px;padding:8px;text-align:center">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--red);line-height:1">5</div>
+            <div style="font-size:9px;font-weight:600;color:var(--red);text-transform:uppercase;margin-top:2px">Em Atraso</div>
+          </div>
+          <div style="background:var(--gray-bg);border-radius:5px;padding:8px;text-align:center">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--navy2);line-height:1">3</div>
+            <div style="font-size:9px;font-weight:600;color:var(--navy2);text-transform:uppercase;margin-top:2px">Em Andamento</div>
+          </div>
+          <div style="background:var(--green-bg);border-radius:5px;padding:8px;text-align:center">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--green);line-height:1">1</div>
+            <div style="font-size:9px;font-weight:600;color:var(--green);text-transform:uppercase;margin-top:2px">Concluído</div>
+          </div>
+        </div>
+        <div style="margin-top:6px;text-align:center;font-size:11px;color:var(--text-muted)">
+          5 + 3 + 1 = <strong>9 projetos</strong> ✓
+        </div>
+      </div>
+      <!-- Reprogramados: nota informativa, não categoria separada -->
+      <div style="background:var(--amber-bg);border:1px solid #f0d080;border-radius:5px;padding:7px 12px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+        <span style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--amber)">6</span>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.05em">dos 8 ativos tiveram prazo reprogramado</div>
+          <div style="font-size:10px;color:var(--amber);opacity:.8">informação adicional — não soma ao total</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--gray-600);line-height:1.6;padding-top:10px;border-top:1px solid var(--gray-200)">
+        <span style="color:var(--green);font-weight:600">✓ BLS-MLR-034</span> concluído — saiu da onda<br>
+        <span style="color:var(--gray-500);font-size:10px">Em andamento no prazo: NMT-MLR-197 e BLS-MLR-039</span>
       </div>
     </div>
-    <div class="wave"><div class="wave-lbl">Onda 2 · Críticos</div><div class="wave-val">7</div><div class="wave-delta pos">↓−2 vs 08/Mai</div><div class="wave-sub">Ataque imediato</div></div>
-    <div class="wave"><div class="wave-lbl">Onda 3 · Altos</div><div class="wave-val">12</div><div class="wave-delta pos">↓−1 vs 08/Mai</div><div class="wave-sub">Sequência controlada</div></div>
-    <div class="wave"><div class="wave-lbl">Onda 4 · Médio+Baixo</div><div class="wave-val">7</div><div class="wave-delta pos">↓−1 vs 08/Mai</div><div class="wave-sub">Eliminação por unidade</div></div>
-    <div class="wave"><div class="wave-lbl">Total em Aberto</div><div class="wave-val">35</div><div class="wave-delta pos">↓−4 vs 08/Mai</div><div class="wave-sub">Excluindo concluídos</div></div>
-  </div>
-  <div style="font-size:11px;color:var(--text-muted);margin-bottom:18px">
-    <strong>Onda 1:</strong> reduziu de 9 para 8 — <span style="color:var(--red);font-weight:600">BLS-MLR-034 concluído</span>, saiu da onda.
-    &nbsp;·&nbsp; <strong>Onda 2:</strong> reduziu de 9 para 7 — BLS-MON concluído + outros projetos avançaram de fase.
-    &nbsp;·&nbsp; <strong>NMT-MLR-023:</strong> permanece em FEL II (não é Onda 1).
+
+    <!-- ONDA 2 -->
+    <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);border-top:4px solid var(--amber);padding:16px 18px;box-shadow:var(--shadow-card)">
+      <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber);margin-bottom:8px">⚠ Onda 2 · Críticos — Ataque Imediato</div>
+      <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:14px;background:var(--gray-50);border-radius:6px;padding:10px 12px">
+        <div style="text-align:center">
+          <div style="font-size:9px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">08/Mai — Total</div>
+          <div style="font-family:var(--font-display);font-size:32px;font-weight:800;color:var(--gray-600);line-height:1">9</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px">projetos ativos</div>
+        </div>
+        <div style="text-align:center;font-size:20px;color:var(--amber);font-weight:700">→</div>
+        <div style="text-align:center;background:#fff8ee;border:1px solid #f0d080;border-radius:6px;padding:6px 10px">
+          <div style="font-size:9px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px">04/Jun — Total</div>
+          <div style="font-family:var(--font-display);font-size:32px;font-weight:800;color:var(--navy2);line-height:1">7</div>
+          <div style="font-size:10px;color:var(--amber);font-weight:600;margin-top:2px">projetos ativos</div>
+        </div>
+      </div>
+      <!-- Status dos 9 projetos: 2 saíram + 7 ativos -->
+      <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:6px;padding:10px 12px;margin-bottom:10px">
+        <div style="font-size:9px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Status dos 9 projetos em 04/Jun</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+          <div style="background:var(--red-bg);border-radius:5px;padding:8px;text-align:center">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--red);line-height:1">3</div>
+            <div style="font-size:9px;font-weight:600;color:var(--red);text-transform:uppercase;margin-top:2px">Em Atraso FEL II</div>
+          </div>
+          <div style="background:var(--green-bg);border-radius:5px;padding:8px;text-align:center">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--green);line-height:1">4</div>
+            <div style="font-size:9px;font-weight:600;color:var(--green);text-transform:uppercase;margin-top:2px">Avançaram → FEL III</div>
+          </div>
+          <div style="background:var(--green-bg);border-radius:5px;padding:8px;text-align:center;border:1px solid #b8d9a0">
+            <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--green);line-height:1">2</div>
+            <div style="font-size:9px;font-weight:600;color:var(--green);text-transform:uppercase;margin-top:2px">Saíram da Onda</div>
+          </div>
+        </div>
+        <!-- Detalhe dos 2 que saíram -->
+        <div style="margin-top:8px;background:var(--white);border:1px solid var(--gray-200);border-radius:5px;padding:7px 10px;font-size:11px;line-height:1.6;color:var(--gray-700)">
+          <span style="color:var(--green);font-weight:600">✓ BLS-MON</span> — Monge Lagoa Pluvial → <strong>Concluído</strong><br>
+          <span style="color:var(--gray-500);font-weight:600">⇢ SDL-POC-A</span> — Poços Captação Outorga → <strong>Reclassificado</strong> (depende de órgão externo)
+        </div>
+        <div style="margin-top:6px;text-align:center;font-size:11px;color:var(--text-muted)">
+          3 + 4 + 2 = <strong>9 projetos</strong> ✓ &nbsp;|&nbsp; 7 ativos em 04/Jun
+        </div>
+      </div>
+      <!-- Reprogramados: nota informativa -->
+      <div style="background:var(--amber-bg);border:1px solid #f0d080;border-radius:5px;padding:7px 12px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+        <span style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--amber)">3</span>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.05em">dos 3 em atraso tiveram prazo reprogramado</div>
+          <div style="font-size:10px;color:var(--amber);opacity:.8">informação adicional — não soma ao total</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--gray-600);line-height:1.6;padding-top:10px;border-top:1px solid var(--gray-200)">
+        <span style="color:var(--green);font-weight:600">✓ BLS-MON</span> concluído — saiu da onda<br>
+        <span style="color:var(--green);font-weight:600">↑ SNP-284 · SNP-294 · NMT-190 · DRD-167</span> avançaram FEL II→III<br>
+        <span style="color:var(--red);font-size:10px;font-weight:600">3 em atraso: SDL-065 · BLS-047 · NMT-023</span>
+      </div>
+    </div>
+
   </div>
 
-  <!-- ═══ 3. PROJETOS CONCLUÍDOS ═══ -->
-  <div class="section-eyebrow">
+  <div style="font-size:11px;color:var(--text-muted);margin-bottom:16px">
+    <strong>Onda 1:</strong> BLS-MLR-034 — Construção de depósito de cinzas concluído → 9 para 8 projetos. &nbsp;·&nbsp;
+    <strong>Onda 2:</strong> BLS-MON — Monge Lagoa Pluvial concluído + 4 projetos avançaram de FEL II para FEL III → 9 para 7.
+  </div>
+
+  <!-- TABELA ONDA 1 -->
+  <div style="margin-bottom:14px">
+    <div style="background:linear-gradient(90deg,var(--navy2),var(--navy3));padding:10px 18px;border-radius:var(--r-lg) var(--r-lg) 0 0;display:flex;align-items:center;justify-content:space-between">
+      <span style="font-family:var(--font-display);font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">▶ Onda 1 — Em Execução (FEL IV): Concluir Sem Parar</span>
+      <span style="font-size:11px;color:rgba(255,255,255,.75)">08/Mai: 9 projetos → 04/Jun: 8 projetos (BLS-MLR-034 concluído)</span>
+    </div>
+    <div class="card" style="border-radius:0 0 var(--r-lg) var(--r-lg);margin-bottom:0">
+      <div class="card-note">Projetos já em fase de execução (FEL IV) seguem até o encerramento, independente da prioridade. Esta onda corre em paralelo às demais e drena recursos primeiro.</div>
+      <div style="overflow-x:auto">
+        <table class="tbl">
+          <thead><tr><th>Código</th><th>Projeto</th><th>Un.</th><th>Prio.</th><th>Prazo 08/Mai</th><th>Prazo 04/Jun</th><th>Situação 04/Jun</th><th>CAPEX Rev.</th></tr></thead>
+          <tbody>
+            <tr style="background:#f0faf3"><td><span class="code" style="text-decoration:line-through;opacity:.6">BLS-MLR-034</span></td><td><span style="font-size:12px;color:var(--green);font-weight:600">✓ Construção de depósito de cinzas</span><div style="font-size:10px;color:var(--green)">CONCLUÍDO em 05/Jun/2026 — saiu da Onda 1</div></td><td><span class="u u-bls">BLS</span></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:10.5px;color:var(--red)">16/05/2026</td><td style="font-size:10.5px;color:var(--green);font-weight:600">05/Jun/2026 ✓</td><td style="font-size:11px;color:var(--green)">Concluído</td><td style="font-size:11px">R$575k</td></tr>
+            <tr><td><span class="code">NMT-MLR-197</span></td><td>Substituição dos ciclones por multiciclones</td><td><span class="u u-nmt">NMT</span></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:10.5px">27/10/2026</td><td style="font-size:10.5px">27/10/2026</td><td style="font-size:11px">Em Andamento</td><td style="font-size:11px">R$15,07mi</td></tr>
+            <tr style="background:#fff8f5"><td><span class="code">DRD-MLR-123</span></td><td>Implantação de monge para bacia pluvial</td><td><span class="u u-drd">DRD</span></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:10.5px;color:var(--red)">18/05/2026</td><td style="font-size:10.5px;color:var(--amber)">09/06/2026 ↑</td><td style="font-size:11px;color:var(--amber)">Em Atraso · desvio −6%</td><td style="font-size:11px">R$1,74mi</td></tr>
+            <tr><td><span class="code">SDL-MLR-050</span></td><td>Adequação da lagoa pluvial 1 e rede de drenagem</td><td><span class="u u-sdl">SDL</span></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:10.5px">27/07/2026</td><td style="font-size:10.5px;color:var(--green)">28/06/2026 ↓</td><td style="font-size:11px">Em Andamento</td><td style="font-size:11px">—</td></tr>
+            <tr style="background:#fff8f5"><td><span class="code">DRD-MLR-002</span></td><td>Adequação CSAO — Posto Rodobras Dourados</td><td><span class="u u-drd">DRD</span></td><td><span class="b b-alto">Alto</span></td><td style="font-size:10.5px;color:var(--red)">12/05/2026</td><td style="font-size:10.5px;color:var(--red)">30/05/2026 ↑</td><td style="font-size:11px;color:var(--green)">Em Atraso · 99,4% executado</td><td style="font-size:11px">—</td></tr>
+            <tr style="background:#fff8f5"><td><span class="code">SDL-FERT</span></td><td>Fertirrigação — Canhões Operando com Falhas</td><td><span class="u u-sdl">SDL</span></td><td><span class="b b-alto">Alto</span></td><td style="font-size:10.5px;color:var(--red)">22/05/2026</td><td style="font-size:10.5px;color:var(--red)">25/05/2026 ↑</td><td style="font-size:11px;color:var(--red)">Em Atraso · 9 canhões em campo</td><td style="font-size:11px">R$133k</td></tr>
+            <tr style="background:#fff8f5"><td><span class="code">SDL-MLR-042</span></td><td>Melhorias na elevatória do posto Rodobras</td><td><span class="u u-sdl">SDL</span></td><td><span class="b b-med">Médio</span></td><td style="font-size:10.5px;color:var(--red)">23/05/2026</td><td style="font-size:10.5px;color:var(--red)">05/06/2026 ↑</td><td style="font-size:11px;color:var(--amber)">Em Atraso · execução em andamento</td><td style="font-size:11px">—</td></tr>
+            <tr style="background:#fff8f5"><td><span class="code">NMT-MLR-203</span></td><td>Telemetria dos poços de observação</td><td><span class="u u-nmt">NMT</span></td><td><span class="b b-bxo">Baixo</span></td><td style="font-size:10.5px;color:var(--red)">29/04/2026</td><td style="font-size:10.5px;color:var(--red)">30/06/2026 ↑</td><td style="font-size:11px">Em Atraso · 12,98% avanço</td><td style="font-size:11px">—</td></tr>
+            <tr><td><span class="code">BLS-MLR-039</span></td><td>Instalação de escadas nas caixas SAO</td><td><span class="u u-bls">BLS</span></td><td><span class="b b-bxo">Baixo</span></td><td style="font-size:10.5px">30/06/2026</td><td style="font-size:10.5px">30/06/2026</td><td style="font-size:11px">Em Andamento</td><td style="font-size:11px">R$65k</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABELA ONDA 2 -->
+  <div style="margin-bottom:18px">
+    <div style="background:linear-gradient(90deg,var(--navy2),var(--navy3));padding:10px 18px;border-radius:var(--r-lg) var(--r-lg) 0 0;display:flex;align-items:center;justify-content:space-between">
+      <span style="font-family:var(--font-display);font-size:14px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">⚠ Onda 2 — Críticos: Ataque Imediato</span>
+      <span style="font-size:11px;color:rgba(255,255,255,.75)">08/Mai: 9 projetos → 04/Jun: 7 projetos (BLS-MON concluído · 4 avançaram para FEL III)</span>
+    </div>
+    <div class="card" style="border-radius:0 0 var(--r-lg) var(--r-lg);margin-bottom:0">
+      <div class="card-note"><strong>Projetos que avançaram de FEL II → FEL III no período (saíram da Onda 2):</strong> engenharia finalizada, projetos emitidos, responsabilidade transferida para Obras.</div>
+      <div style="overflow-x:auto">
+        <table class="tbl">
+          <thead><tr><th>Código</th><th>Projeto</th><th>Un.</th><th>Movimento</th><th>Prazo 08/Mai</th><th>Prazo 04/Jun</th><th>LT FEL II</th><th>CAPEX Rev.</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr style="background:#f0faf3"><td><span class="code" style="opacity:.6;text-decoration:line-through">BLS-MON</span></td><td><span style="font-size:12px;color:var(--green);font-weight:600">✓ Monge Lagoa Pluvial</span><div style="font-size:10px;color:var(--green)">CONCLUÍDO ~22/Mai/2026 — saiu da Onda 2</div></td><td><span class="u u-bls">BLS</span></td><td><span class="b b-conc">Concluído</span></td><td style="font-size:10.5px;color:var(--red)">22/05/2026</td><td style="font-size:10.5px;color:var(--green);font-weight:600">~22/Mai ✓</td><td><span class="lt lt-hi">553d</span></td><td>—</td><td><span class="b b-conc">Concluído</span></td></tr>
+            <tr style="background:#f5f9ff"><td><span class="code">SNP-MLR-284</span></td><td>Melhoria/substituição da peneira rotativa<div style="font-size:10px;color:var(--green);font-weight:600">↑ Avançou FEL II → FEL III · resp. passou para Obras</div></td><td><span class="u u-snp">SNP</span></td><td><div class="ff"><span class="ff-from">FEL II</span><span class="ff-arr">→</span><span class="ff-to">FEL III</span></div></td><td style="font-size:10.5px">10/06/2026</td><td style="font-size:10.5px">10/06/2026</td><td><span class="lt lt-hi">182d</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$60k</s> → <strong>R$429k</strong></td><td><span class="b b-and">Em Andamento</span></td></tr>
+            <tr style="background:#f5f9ff"><td><span class="code">SNP-MLR-294</span></td><td>Fertirrigação<div style="font-size:10px;color:var(--green);font-weight:600">↑ Avançou FEL II → FEL III · resp. passou para Obras</div></td><td><span class="u u-snp">SNP</span></td><td><div class="ff"><span class="ff-from">FEL II</span><span class="ff-arr">→</span><span class="ff-to">FEL III</span></div></td><td style="font-size:10.5px">29/06/2026</td><td style="font-size:10.5px">29/06/2026</td><td><span class="lt lt-hi">175d</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$216k</s> → <strong>R$1,89mi</strong></td><td><span class="b b-and">Em Andamento</span></td></tr>
+            <tr style="background:#f5f9ff"><td><span class="code">NMT-MLR-190</span></td><td>Implantação de monge pluvial e dissipador<div style="font-size:10px;color:var(--green);font-weight:600">↑ Avançou FEL II → FEL III · resp. passou para Obras</div></td><td><span class="u u-nmt">NMT</span></td><td><div class="ff"><span class="ff-from">FEL II</span><span class="ff-arr">→</span><span class="ff-to">FEL III</span></div></td><td style="font-size:10.5px">29/09/2026</td><td style="font-size:10.5px">29/09/2026</td><td><span class="lt lt-hi">258d</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$846k</s> → <strong>R$1,08mi</strong></td><td><span class="b b-and">Em Andamento</span></td></tr>
+            <tr style="background:#f5f9ff"><td><span class="code">DRD-MLR-167</span></td><td>Tratamento efluente oleoso da lavagem de caminhões<div style="font-size:10px;color:var(--green);font-weight:600">↑ Avançou FEL II → FEL III · resp. passou para Obras</div></td><td><span class="u u-drd">DRD</span></td><td><div class="ff"><span class="ff-from">FEL II</span><span class="ff-arr">→</span><span class="ff-to">FEL III</span></div></td><td style="font-size:10.5px">30/06/2026</td><td style="font-size:10.5px">30/06/2026</td><td><span class="lt lt-lo">74d</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$835k</s> → <strong>R$1,07mi</strong></td><td><span class="b b-and">Em Andamento</span></td></tr>
+            <tr><td><span class="code">SDL-MLR-065</span></td><td>Adequação da drenagem na lagoa 03</td><td><span class="u u-sdl">SDL</span></td><td><span style="font-size:10px;color:var(--amber);font-weight:600">Permanece FEL II</span></td><td style="font-size:10.5px;color:var(--red)">30/05/2026</td><td style="font-size:10.5px;color:var(--red)">06/06/2026 ↑</td><td>—</td><td>—</td><td><span class="b b-atr">Em Atraso</span></td></tr>
+            <tr><td><span class="code">BLS-MLR-047</span></td><td>Sistema de qualidade da bacia pluvial</td><td><span class="u u-bls">BLS</span></td><td><span style="font-size:10px;color:var(--amber);font-weight:600">Permanece FEL II</span></td><td style="font-size:10.5px;color:var(--red)">22/05/2026</td><td style="font-size:10.5px;color:var(--red)">05/06/2026 ↑</td><td>—</td><td>—</td><td><span class="b b-atr">Em Atraso</span></td></tr>
+            <tr><td><span class="code">NMT-MLR-023</span></td><td>Área de fertirrigação insuficiente</td><td><span class="u u-nmt">NMT</span></td><td><span style="font-size:10px;color:var(--amber);font-weight:600">Permanece FEL II</span></td><td style="font-size:10.5px;color:var(--red)">03/03/2026</td><td style="font-size:10.5px;color:var(--red)">30/06/2026 ↑</td><td>—</td><td>—</td><td><span class="b b-atr">Em Atraso</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO 3 — CONCLUÍDOS -->
+  <div class="sec-hdr">
     <h3>3 · Projetos Concluídos no Período</h3>
     <div class="bar"></div>
-    <div class="count-tag">4 concluídos em 08/Mai → 8 em 04/Jun · +4 novos</div>
+    <div class="tag">4 concluídos em 08/Mai → 8 em 04/Jun · +4 novos</div>
   </div>
-
   <div class="conc-grid">
-
-    <!-- 1. BLS-MLR-034 — Construção de depósito de cinzas -->
     <div class="cc" style="border:2px solid var(--green);border-left:4px solid var(--green)">
-      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
-        <span class="code">BLS-MLR-034</span>
-        <span class="u u-bls">BLS — Balsas · MA</span>
-        <span class="b b-conc">Concluído</span>
-        <span style="font-size:9px;background:#fff3cd;color:var(--amber);font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid #f0d080">⭐ Era Onda 1</span>
-      </div>
+      <div class="cc-head"><span class="code">BLS-MLR-034</span><span class="u u-bls">BLS — Balsas · MA</span><span class="b b-conc">Concluído</span><span style="font-size:9px;background:#fff3cd;color:var(--amber);font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid #f0d080">⭐ Era Onda 1</span></div>
       <div class="cc-name">Construção de depósito de cinzas</div>
-      <div style="font-size:10px;color:var(--green);font-weight:600;background:var(--green-bg);padding:5px 8px;border-radius:4px;margin-bottom:10px;line-height:1.5">
-        ✓ Estava na <strong>Onda 1</strong> em 08/Mai (FEL IV · Crítico · Em Atraso).<br>
-        Concluído no período → <strong>Onda 1: 9 → 8 projetos (−1)</strong>
-      </div>
+      <div style="font-size:10px;color:var(--green);font-weight:600;background:var(--green-bg);padding:5px 8px;border-radius:4px;margin-bottom:8px;line-height:1.5">✓ Estava na <strong>Onda 1</strong> em 08/Mai (FEL IV · Crítico · Em Atraso).<br>Concluído no período → <strong>Onda 1: 9 → 8 projetos (−1)</strong></div>
       <div class="cc-row"><span class="cc-lbl">Execução 100%</span><span class="cc-val" style="color:var(--green);font-weight:700">29/Mai/2026</span></div>
       <div class="cc-row"><span class="cc-lbl">Formalização</span><span class="cc-val">05/Jun/2026</span></div>
       <div class="cc-row"><span class="cc-lbl">Prazo original</span><span class="cc-val" style="color:var(--red)">16/Mai/2026 — em atraso</span></div>
+      <div class="cc-row"><span class="cc-lbl">Execução</span><span class="cc-val" style="color:var(--green);font-weight:700">100%</span></div>
       <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-crit">Crítico</span></div>
     </div>
-
-    <!-- 2. BLS-CSAO — Caixas CSAO -->
-    <div class="cc" style="border-left:4px solid var(--green)">
-      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
-        <span class="code">BLS-CSAO</span>
-        <span class="u u-bls">BLS — Balsas · MA</span>
-        <span class="b b-conc">Concluído</span>
-      </div>
+    <div class="cc">
+      <div class="cc-head"><span class="code">BLS-CSAO</span><span class="u u-bls">BLS — Balsas · MA</span><span class="b b-conc">Concluído</span></div>
       <div class="cc-name">Caixas CSAO — Pendente Instalação das Caixas CSAO</div>
       <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">29/Abr/2026</span></div>
       <div class="cc-row"><span class="cc-lbl">Fase de conclusão</span><span class="cc-val">FEL IV — execução completa</span></div>
+      <div class="cc-row"><span class="cc-lbl">Execução</span><span class="cc-val" style="color:var(--green);font-weight:700">100%</span></div>
       <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-alto">Alto</span></div>
     </div>
-
-    <!-- 3. BLS-POC — Poços de Captação -->
-    <div class="cc" style="border-left:4px solid var(--green)">
-      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
-        <span class="code">BLS-POC</span>
-        <span class="u u-bls">BLS — Balsas · MA</span>
-        <span class="b b-conc">Concluído</span>
-      </div>
+    <div class="cc">
+      <div class="cc-head"><span class="code">BLS-POC</span><span class="u u-bls">BLS — Balsas · MA</span><span class="b b-conc">Concluído</span></div>
       <div class="cc-name">Poços de Captação — Extrapolamento Horas Trabalhadas e Vazão</div>
       <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">22/Mai/2026</span></div>
       <div class="cc-row"><span class="cc-lbl">Fase de conclusão</span><span class="cc-val">Estudo</span></div>
       <div class="cc-row"><span class="cc-lbl">Nota</span><span class="cc-val" style="color:var(--navy2)">Relatório emitido</span></div>
+      <div class="cc-row"><span class="cc-lbl">Execução</span><span class="cc-val" style="color:var(--green);font-weight:700">100%</span></div>
       <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-alto">Alto</span></div>
     </div>
-
-    <!-- 4. BLS-MON — Monge Lagoa Pluvial -->
     <div class="cc">
-      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
-        <span class="code">BLS-MON</span>
-        <span class="u u-bls">BLS — Balsas · MA</span>
-        <span class="b b-conc">Concluído</span>
-      </div>
+      <div class="cc-head"><span class="code">BLS-MON</span><span class="u u-bls">BLS — Balsas · MA</span><span class="b b-conc">Concluído</span></div>
       <div class="cc-name">Monge Lagoa Pluvial — Monge de Saída em Cota Superior ao Fundo da Lagoa</div>
       <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">~22/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Execução</span><span class="cc-val" style="color:var(--green);font-weight:700">100%</span></div>
       <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-crit">Crítico</span></div>
-      <div style="margin-top:10px;padding:9px 11px;background:#fffbee;border:1px solid #f0d080;border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:11px;color:#5a3b00;line-height:1.6">
-        <strong style="display:block;margin-bottom:3px;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--amber)">Observação</strong>
-        Enviado CAPEX revisado que está sendo considerado junto com a melhoria <strong>BLS-MLR-047 — Sistema de qualidade da bacia pluvial</strong>. Sendo assim, o acompanhamento deste item passará a ser a melhoria, que está pendente projeto elétrico.
-      </div>
+      <div class="cc-obs"><strong>Observação:</strong> Enviado CAPEX revisado considerado junto com <strong>BLS-MLR-047 — Sistema de qualidade da bacia pluvial</strong>. O acompanhamento passará a ser a melhoria, pendente projeto elétrico.</div>
     </div>
-
-    <!-- 5. SNP-MLR-311 — Baia de Acondicionamento -->
     <div class="cc">
-      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px">
-        <span class="code">SNP-MLR-311</span>
-        <span class="u u-snp">SNP — Sinop · MT</span>
-        <span class="b b-conc">Concluído</span>
-      </div>
+      <div class="cc-head"><span class="code">SNP-MLR-311</span><span class="u u-snp">SNP — Sinop · MT</span><span class="b b-conc">Concluído</span></div>
       <div class="cc-name">Baia de Acondicionamento Temporário — Resíduos de Varrição</div>
       <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">14/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Execução</span><span class="cc-val" style="color:var(--green);font-weight:700">100%</span></div>
       <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-bxo">Baixo</span></div>
-      <div style="margin-top:10px;padding:9px 11px;background:#fffbee;border:1px solid #f0d080;border-left:3px solid var(--amber);border-radius:var(--r-sm);font-size:11px;color:#5a3b00;line-height:1.6">
-        <strong style="display:block;margin-bottom:3px;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--amber)">Observação</strong>
-        Definido com Engenharia e Meio Ambiente que a Baia será implantada ao lado da nova Central de Resíduos. A Engenharia irá elaborar os projetos junto com o escopo da obra do <strong>SNP-MLR-276 — Stacker Reclaimer — Automatização de Fluxo de Biomassa</strong>, que está em andamento na unidade.
-      </div>
+      <div class="cc-obs"><strong>Observação:</strong> Definido com Engenharia e Meio Ambiente que a Baia será implantada ao lado da nova Central de Resíduos. A Engenharia irá elaborar os projetos junto com o escopo da obra do <strong>SNP-MLR-276 — Stacker Reclaimer — Automatização de Fluxo de Biomassa</strong>, que está em andamento na unidade.</div>
     </div>
-
+    <div class="cc">
+      <div class="cc-head"><span class="code">NMT-POC</span><span class="u u-nmt">NMT — Nova Mutum · MT</span><span class="b b-conc">Concluído</span></div>
+      <div class="cc-name">Poços de Captação — Nova Mutum</div>
+      <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">Antes de 08/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Fase de conclusão</span><span class="cc-val">FEL V — concluído</span></div>
+      <div class="cc-row"><span class="cc-lbl">Execução</span><span class="cc-val" style="color:var(--green);font-weight:700">100%</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-alto">Alto</span></div>
+    </div>
+    <div class="cc">
+      <div class="cc-head"><span class="code">NMT-MLR-194</span><span class="u u-nmt">NMT — Nova Mutum · MT</span><span class="b b-conc">Concluído</span></div>
+      <div class="cc-name">Adequação disponibilidade hídrica — Nova Mutum</div>
+      <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">Antes de 08/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Fase de conclusão</span><span class="cc-val">FEL V — concluído</span></div>
+      <div class="cc-row"><span class="cc-lbl">Execução</span><span class="cc-val" style="color:var(--green);font-weight:700">100%</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-alto">Alto</span></div>
+    </div>
+    <div class="cc">
+      <div class="cc-head"><span class="code">DRD-MLR-171</span><span class="u u-drd">DRD — Dourados · MS</span><span class="b b-conc">Concluído</span></div>
+      <div class="cc-name">Adequação disponibilidade hídrica — Dourados</div>
+      <div class="cc-row"><span class="cc-lbl">Data de conclusão</span><span class="cc-val">Antes de 08/Mai/2026</span></div>
+      <div class="cc-row"><span class="cc-lbl">Fase de conclusão</span><span class="cc-val">FEL V — concluído</span></div>
+      <div class="cc-row"><span class="cc-lbl">Execução</span><span class="cc-val" style="color:var(--green);font-weight:700">100%</span></div>
+      <div class="cc-row"><span class="cc-lbl">Prioridade</span><span class="b b-alto">Alto</span></div>
+    </div>
   </div>
 
-  <!-- ═══ 2. PROJETOS QUE AVANÇARAM DE FASE FEL ═══ -->
-  <div class="section-eyebrow">
-    <h3>4 · Projetos que Avançaram de Fase FEL</h3>
+  <!-- SEÇÃO 4 — FEL ADVANCES TABLE -->
+  <div class="sec-hdr">
+    <h3>4 · Transferência de Engenharia para Obras — Detalhamento FEL II→III</h3>
     <div class="bar"></div>
-    <div class="count-tag">FEL II → FEL III · Engenharia finalizada · 08/Mai → 04/Jun/2026</div>
+    <div class="tag">13 projetos · Eng. finalizada · CAPEX aprovado · resp. transferida</div>
   </div>
-
-  <div class="tbl-card">
-    <div class="tbl-header">
-      <h3>13 Projetos — Engenharia Concluída, Responsabilidade Transferida para Obras</h3>
-      <span class="sub">FEL II = Engenharia elaborando projetos e revisando CAPEX &nbsp;|&nbsp; FEL III = Projetos emitidos, CAPEX aprovado, responsabilidade passa a Obras</span>
-    </div>
-    <div class="tbl-note">
-      <strong>Lead Time FEL II</strong> = dias que a engenharia levou para concluir o detalhamento na fase FEL II.
-      <span style="margin-left:16px;display:inline-flex;gap:10px;align-items:center">
-        <span class="lt lt-lo" style="font-size:9px">≤ 90 dias — ágil</span>
-        <span class="lt lt-mi" style="font-size:9px">91–150 dias — normal</span>
-        <span class="lt lt-hi" style="font-size:9px">&gt; 150 dias — longo</span>
-      </span>
-    </div>
+  <div class="card">
+    <div class="card-hdr"><h3>13 Projetos — Engenharia Concluída, Responsabilidade Transferida para Obras</h3></div>
+    <div class="card-note"><strong>FEL II</strong> = elaboração + revisão CAPEX &nbsp;|&nbsp; <strong>FEL III</strong> = projetos emitidos, CAPEX aprovado, resp. passa a Obras &nbsp;|&nbsp; <span class="lt lt-lo" style="font-size:9px">≤90d</span> <span class="lt lt-mi" style="font-size:9px">91–150d</span> <span class="lt lt-hi" style="font-size:9px">&gt;150d</span></div>
     <div style="overflow-x:auto">
-    <table class="main">
-      <thead><tr>
-        <th>Código</th><th>Projeto</th><th>Unidade</th><th>Avanço FEL</th><th>Lead Time FEL II</th><th>Pipeline</th>
-        <th>Disciplina</th><th>Prioridade</th><th>CAPEX Revisado</th><th>Prazo</th><th>Status</th>
-      </tr></thead>
+    <table class="tbl">
+      <thead><tr><th>Código</th><th>Projeto</th><th>Un.</th><th>Avanço</th><th>LT FEL II</th><th>Prio.</th><th>CAPEX Revisado</th><th>Prazo</th><th>Status</th></tr></thead>
       <tbody>
-        <tr>
-          <td><span class="code">SNP-MLR-284</span></td>
-          <td><span class="pname">Melhoria/substituição da peneira rotativa</span></td>
-          <td><span class="u u-snp">SNP</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-hi">182 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-crit">Crítico</span></td>
-          <td><div class="cap"><span class="cap-old">R$60k</span><span class="cap-new">R$429k</span><span class="cap-d cap-up">+613%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">10/06/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">SNP-MLR-294</span></td>
-          <td><span class="pname">Fertirrigação</span></td>
-          <td><span class="u u-snp">SNP</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-hi">175 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-crit">Crítico</span></td>
-          <td><div class="cap"><span class="cap-old">R$216k</span><span class="cap-new">R$1,89mi</span><span class="cap-d cap-up">+775%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">29/06/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">SNP-MLR-310</span></td>
-          <td><span class="pname">Controle de erosões</span></td>
-          <td><span class="u u-snp">SNP</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-lo">43 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-alto">Alto</span></td>
-          <td><div class="cap"><span class="cap-old">R$974k</span><span class="cap-new">R$688k</span><span class="cap-d cap-dn">−29%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">06/07/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">SNP-MLR-295</span></td>
-          <td><span class="pname">Telemetria dos poços de observação</span></td>
-          <td><span class="u u-snp">SNP</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-hi">168 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras / Instr.</strong></td>
-          <td><span class="b b-bxo">Baixo</span></td>
-          <td><div class="cap"><span class="cap-new">R$286k</span><span class="cap-d cap-eq">mantido</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">05/07/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-
-        <tr>
-          <td><span class="code">NMT-MLR-190</span></td>
-          <td><span class="pname">Implantação de monge pluvial e dissipador de saída</span></td>
-          <td><span class="u u-nmt">NMT</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-hi">258 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-crit">Crítico</span></td>
-          <td><div class="cap"><span class="cap-old">R$846k</span><span class="cap-new">R$1,08mi</span><span class="cap-d cap-up">+27%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">29/09/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">NMT-MLR-191</span></td>
-          <td><span class="pname">Cercamento da fertirrigação</span></td>
-          <td><span class="u u-nmt">NMT</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-mi">145 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-med">Médio</span></td>
-          <td><div class="cap"><span class="cap-old">R$444k</span><span class="cap-new">R$28k</span><span class="cap-d cap-dn">−94%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">19/06/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">DRD-MLR-167</span></td>
-          <td><span class="pname">Tratamento efluente oleoso da lavagem de caminhões</span></td>
-          <td><span class="u u-drd">DRD</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-lo">74 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-crit">Crítico</span></td>
-          <td><div class="cap"><span class="cap-old">R$835k</span><span class="cap-new">R$1,07mi</span><span class="cap-d cap-up">+28%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">30/06/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">DRD-MLR-172</span></td>
-          <td><span class="pname">Cercamento da fertirrigação</span></td>
-          <td><span class="u u-drd">DRD</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-hi">266 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-bxo">Baixo</span></td>
-          <td><div class="cap"><span class="cap-old">R$229k</span><span class="cap-new">R$287k</span><span class="cap-d cap-up">+25%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">08/07/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">DRD-MLR-205</span></td>
-          <td><span class="pname">Armazém de IBC</span></td>
-          <td><span class="u u-drd">DRD</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-lo">41 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-bxo">Baixo</span></td>
-          <td><div class="cap"><span class="cap-old">R$144k</span><span class="cap-new">R$107k</span><span class="cap-d cap-dn">−26%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">22/06/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">SDL-MLR-061</span></td>
-          <td><span class="pname">Sistema de qualidade da bacia pluvial</span></td>
-          <td><span class="u u-sdl">SDL</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-lo">47 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-alto">Alto</span></td>
-          <td><div class="cap"><span class="cap-old">R$3,64mi</span><span class="cap-new">R$894k</span><span class="cap-d cap-dn">−75%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">11/09/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">BLS-MLR-051</span></td>
-          <td><span class="pname">Sistema de drenagem próximo ao muro</span></td>
-          <td><span class="u u-bls">BLS</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-lo">29 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-alto">Alto</span></td>
-          <td><div class="cap"><span class="cap-old">sem CAPEX</span><span class="cap-new">R$298k</span><span class="cap-d cap-dn">novo</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">11/09/2026</td>
-          <td><span class="b b-atr">Em Atraso</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">BLS-MLR-038</span></td>
-          <td><span class="pname">Construção de depósito para IBCs</span></td>
-          <td><span class="u u-bls">BLS</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-hi">158 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-bxo">Baixo</span></td>
-          <td><div class="cap"><span class="cap-old">R$50k</span><span class="cap-new">R$87k</span><span class="cap-d cap-up">+73%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">06/07/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
-        <tr>
-          <td><span class="code">BLS-MLR-020</span></td>
-          <td><span class="pname">Cercamento da fertirrigação</span></td>
-          <td><span class="u u-bls">BLS</span></td>
-          <td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td>
-          <td><span class="lt lt-hi">121 dias</span></td>
-          <td><div class="mp"><span class="done">I</span><span class="dot">·</span><span class="done">II</span><span class="dot">·</span><span class="curr">III</span><span class="dot">·</span><span class="pend">IV</span><span class="dot">·</span><span class="pend">V</span></div></td>
-          <td style="font-size:11px">Eng.Proc → <strong>Obras</strong></td>
-          <td><span class="b b-bxo">Baixo</span></td>
-          <td><div class="cap"><span class="cap-old">R$162k</span><span class="cap-new">R$305k</span><span class="cap-d cap-up">+88%</span></div></td>
-          <td style="font-size:10.5px;white-space:nowrap">01/07/2026</td>
-          <td><span class="b b-and">Em Andamento</span></td>
-        </tr>
+        <tr><td><span class="code">SNP-MLR-284</span></td><td>Melhoria/substituição da peneira rotativa</td><td><span class="u u-snp">SNP</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-hi">182d</span></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$60k</s> → <strong>R$429k</strong> <span style="color:var(--red);font-size:10px">+613%</span></td><td style="font-size:10.5px;white-space:nowrap">10/06/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">SNP-MLR-294</span></td><td>Fertirrigação</td><td><span class="u u-snp">SNP</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-hi">175d</span></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$216k</s> → <strong>R$1,89mi</strong> <span style="color:var(--red);font-size:10px">+775%</span></td><td style="font-size:10.5px;white-space:nowrap">29/06/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">SNP-MLR-310</span></td><td>Controle de erosões</td><td><span class="u u-snp">SNP</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-lo">43d</span></td><td><span class="b b-alto">Alto</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$974k</s> → <strong>R$688k</strong> <span style="color:var(--green);font-size:10px">−29%</span></td><td style="font-size:10.5px;white-space:nowrap">06/07/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">SNP-MLR-295</span></td><td>Telemetria dos poços de observação</td><td><span class="u u-snp">SNP</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-hi">168d</span></td><td><span class="b b-bxo">Baixo</span></td><td style="font-size:11px"><strong>R$286k</strong> mantido</td><td style="font-size:10.5px;white-space:nowrap">05/07/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">NMT-MLR-190</span></td><td>Implantação de monge pluvial e dissipador</td><td><span class="u u-nmt">NMT</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-hi">258d</span></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$846k</s> → <strong>R$1,08mi</strong> <span style="color:var(--red);font-size:10px">+27%</span></td><td style="font-size:10.5px;white-space:nowrap">29/09/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">NMT-MLR-191</span></td><td>Cercamento da fertirrigação</td><td><span class="u u-nmt">NMT</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-mi">145d</span></td><td><span class="b b-med">Médio</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$444k</s> → <strong>R$28k</strong> <span style="color:var(--green);font-size:10px">−94%</span></td><td style="font-size:10.5px;white-space:nowrap">19/06/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">DRD-MLR-167</span></td><td>Tratamento efluente oleoso lavagem de caminhões</td><td><span class="u u-drd">DRD</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-lo">74d</span></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$835k</s> → <strong>R$1,07mi</strong> <span style="color:var(--red);font-size:10px">+28%</span></td><td style="font-size:10.5px;white-space:nowrap">30/06/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">DRD-MLR-172</span></td><td>Cercamento da fertirrigação</td><td><span class="u u-drd">DRD</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-hi">266d</span></td><td><span class="b b-bxo">Baixo</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$229k</s> → <strong>R$287k</strong> <span style="color:var(--red);font-size:10px">+25%</span></td><td style="font-size:10.5px;white-space:nowrap">08/07/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">DRD-MLR-205</span></td><td>Armazém de IBC</td><td><span class="u u-drd">DRD</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-lo">41d</span></td><td><span class="b b-bxo">Baixo</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$144k</s> → <strong>R$107k</strong> <span style="color:var(--green);font-size:10px">−26%</span></td><td style="font-size:10.5px;white-space:nowrap">22/06/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">SDL-MLR-061</span></td><td>Sistema de qualidade da bacia pluvial</td><td><span class="u u-sdl">SDL</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-lo">47d</span></td><td><span class="b b-alto">Alto</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$3,64mi</s> → <strong>R$894k</strong> <span style="color:var(--green);font-size:10px">−75%</span></td><td style="font-size:10.5px;white-space:nowrap">11/09/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">BLS-MLR-051</span></td><td>Sistema de drenagem próximo ao muro</td><td><span class="u u-bls">BLS</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-lo">29d</span></td><td><span class="b b-alto">Alto</span></td><td style="font-size:11px">sem CAPEX → <strong>R$298k</strong></td><td style="font-size:10.5px;white-space:nowrap">11/09/2026</td><td><span class="b b-atr">Em Atraso</span></td></tr>
+        <tr><td><span class="code">BLS-MLR-038</span></td><td>Construção de depósito para IBCs</td><td><span class="u u-bls">BLS</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-hi">158d</span></td><td><span class="b b-bxo">Baixo</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$50k</s> → <strong>R$87k</strong> <span style="color:var(--red);font-size:10px">+73%</span></td><td style="font-size:10.5px;white-space:nowrap">06/07/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
+        <tr><td><span class="code">BLS-MLR-020</span></td><td>Cercamento da fertirrigação</td><td><span class="u u-bls">BLS</span></td><td><div class="ff"><span class="ff-from">II</span><span class="ff-arr">→</span><span class="ff-to">III</span></div></td><td><span class="lt lt-hi">121d</span></td><td><span class="b b-bxo">Baixo</span></td><td style="font-size:11px"><s style="color:var(--gray-400)">R$162k</s> → <strong>R$305k</strong> <span style="color:var(--red);font-size:10px">+88%</span></td><td style="font-size:10.5px;white-space:nowrap">01/07/2026</td><td><span class="b b-and">Em Andamento</span></td></tr>
       </tbody>
     </table>
     </div>
   </div>
 
-  <!-- ═══ 4. ATRASOS ═══ -->
-  <div class="section-eyebrow">
-    <h3>5 · Projetos em Atraso — Lead Time e Contexto Real</h3>
+  <!-- SEÇÃO 5 — ATRASOS -->
+  <div class="sec-hdr">
+    <h3>5 · Projetos em Atraso — Contexto Real</h3>
     <div class="bar"></div>
-    <div class="count-tag">14 projetos com prazo vencido no board · Ref. 04/Jun/2026</div>
+    <div class="tag">14 projetos com prazo vencido · Ref. 04/Jun/2026</div>
   </div>
-
-  <div class="tbl-card">
-    <div class="tbl-header">
-      <h3>14 Projetos em Atraso — Prazo original vs reprogramado · Dias vencidos desde hoje</h3>
-    </div>
-    <div class="tbl-note">
-      <strong>Para a Diretoria:</strong> dos 14 em atraso, <strong>4 têm execução física acima de 95%</strong> (conclusão em dias), <strong>3 dependem de órgão externo</strong> (IMASUL), e somente 3 têm atraso genuíno que exige ação imediata. Os demais têm obra em andamento com prazo base desatualizado.
-    </div>
+  <div class="card">
+    <div class="card-hdr"><h3>14 Projetos em Atraso — Prazo original vs reprogramado</h3></div>
+    <div class="card-note"><strong>Para a Diretoria:</strong> dos 14 em atraso, <strong>4 têm execução física acima de 95%</strong> (conclusão em dias), somente 3 têm atraso genuíno que exige ação imediata. Os demais têm obra em andamento com prazo base desatualizado.</div>
     <div style="overflow-x:auto">
-    <table class="main">
-      <thead><tr>
-        <th>Código</th><th>Projeto</th><th>Un.</th><th>Fase</th><th>Prazo Original</th><th>Reprogramado</th><th>Dias Vencidos</th><th>Prio.</th><th>Situação Real</th>
-      </tr></thead>
+    <table class="tbl">
+      <thead><tr><th>Código</th><th>Projeto</th><th>Un.</th><th>Fase</th><th>Disciplina</th><th>Prazo Original</th><th>Reprogramado</th><th>Dias Vencidos</th><th>Prio.</th><th>Situação Real</th></tr></thead>
       <tbody>
-        <tr>
-          <td><span class="code">SNP-MLR-309</span></td><td>Sistema qualidade bacia pluvial segurança</td><td><span class="u u-snp">SNP</span></td>
-          <td style="font-size:10px">FEL II</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">30/05/2026</td><td style="font-size:10.5px;white-space:nowrap">23/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:20%"></div></div><span class="atr-days">5d</span></div></td>
-          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Projetos Civil e metal sendo elaborados</td>
-        </tr>
-        <tr>
-          <td><span class="code">SNP-POC-A</span></td><td>Poços Captação — Extrapolamento Horas (1 a 6)</td><td><span class="u u-snp">SNP</span></td>
-          <td style="font-size:10px">Estudo</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">20/03/2026</td><td style="font-size:10.5px;white-space:nowrap">15/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:65%"></div></div><span class="atr-days">76d</span></div></td>
-          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Aguardando emissão de relatório técnico</td>
-        </tr>
-        <tr>
-          <td><span class="code">SNP-POC-B</span></td><td>Poços Captação — Extrapolamento Horas (07 e 08)</td><td><span class="u u-snp">SNP</span></td>
-          <td style="font-size:10px">Estudo</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">20/03/2026</td><td style="font-size:10.5px;white-space:nowrap">15/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:65%"></div></div><span class="atr-days">76d</span></div></td>
-          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Aguardando emissão de relatório técnico</td>
-        </tr>
-        <tr>
-          <td><span class="code">SNP-MLR-248</span></td><td>Lançamento de efluente tratado por emissário</td><td><span class="u u-snp">SNP</span></td>
-          <td style="font-size:10px">FEL II</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">31/10/2025</td><td style="font-size:10.5px;white-space:nowrap">30/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:100%"></div></div><span class="atr-days">217d</span></div></td>
-          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px;color:var(--red)">Maior atraso SNP · pendência Plano de Exploração</td>
-        </tr>
-        <tr>
-          <td><span class="code">NMT-MLR-023</span></td><td>Área de fertirrigação insuficiente</td><td><span class="u u-nmt">NMT</span></td>
-          <td style="font-size:10px">FEL II</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">25/05/2026</td><td style="font-size:10.5px;white-space:nowrap">12/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:18%"></div></div><span class="atr-days">10d</span></div></td>
-          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px;color:var(--text-muted)">Em FEL II · projetos de engenharia em elaboração</td>
-        </tr>
-        <tr>
-          <td><span class="code">NMT-MLR-203</span></td><td>Telemetria dos poços de observação</td><td><span class="u u-nmt">NMT</span></td>
-          <td style="font-size:10px">FEL IV</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">29/04/2026</td><td style="font-size:10.5px;white-space:nowrap">30/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:40%"></div></div><span class="atr-days">36d</span></div></td>
-          <td><span class="b b-bxo">Baixo</span></td><td style="font-size:11px">Em execução · 12,98% avanço · MO em contratação</td>
-        </tr>
-        <tr>
-          <td><span class="code">DRD-MLR-123</span></td><td>Implantação de monge para bacia pluvial</td><td><span class="u u-drd">DRD</span></td>
-          <td style="font-size:10px">FEL IV</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">18/05/2026</td><td style="font-size:10.5px;white-space:nowrap">09/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:32%"></div></div><span class="atr-days">17d</span></div></td>
-          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Em execução · desvio melhorou: −23% → −6,10%</td>
-        </tr>
-        <tr class="hl">
-          <td><span class="code">DRD-MLR-002</span></td><td>Adequação CSAO — Posto Rodobras Dourados</td><td><span class="u u-drd">DRD</span></td>
-          <td style="font-size:10px">FEL IV</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">12/05/2026</td><td style="font-size:10.5px;white-space:nowrap">05/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:48%"></div></div><span class="atr-days">23d</span></div></td>
-          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px;color:var(--green)">✓ 99,4% de avanço físico — conclusão iminente</td>
-        </tr>
-        <tr>
-          <td><span class="code">SDL-MLR-065</span></td><td>Adequação da drenagem na lagoa 03</td><td><span class="u u-sdl">SDL</span></td>
-          <td style="font-size:10px">FEL II</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">30/05/2026</td><td style="font-size:10.5px;white-space:nowrap">06/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:18%"></div></div><span class="atr-days">5d</span></div></td>
-          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Projetos Civil com previsão de emissão</td>
-        </tr>
-        <tr>
-          <td><span class="code">SDL-POC-B</span></td><td>Poços Captação — Poço 6 e 7 sem Outorga</td><td><span class="u u-sdl">SDL</span></td>
-          <td style="font-size:10px">Estudo</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">31/08/2024</td><td style="font-size:10.5px;white-space:nowrap">30/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:100%"></div></div><span class="atr-days">643d</span></div></td>
-          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px;color:var(--amber)">Aguardando Outorga IMASUL — dependência externa</td>
-        </tr>
-        <tr>
-          <td><span class="code">SDL-FERT</span></td><td>Fertirrigação — Canhões Operando com Falhas</td><td><span class="u u-sdl">SDL</span></td>
-          <td style="font-size:10px">FEL IV</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">22/05/2026</td><td style="font-size:10.5px;white-space:nowrap">25/05/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:24%"></div></div><span class="atr-days">13d</span></div></td>
-          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">9 canhões pendentes com manutenção — em campo</td>
-        </tr>
-        <tr>
-          <td><span class="code">SDL-MLR-042</span></td><td>Melhorias na elevatória do posto Rodobras</td><td><span class="u u-sdl">SDL</span></td>
-          <td style="font-size:10px">FEL IV</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">23/05/2026</td><td style="font-size:10.5px;white-space:nowrap">05/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:28%"></div></div><span class="atr-days">12d</span></div></td>
-          <td><span class="b b-med">Médio</span></td><td style="font-size:11px;color:var(--green)">Metal-mecânica concluída · pendente só elétrica</td>
-        </tr>
-        <tr>
-          <td><span class="code">BLS-MLR-047</span></td><td>Sistema de qualidade da bacia pluvial</td><td><span class="u u-bls">BLS</span></td>
-          <td style="font-size:10px">FEL II</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">22/05/2026</td><td style="font-size:10.5px;white-space:nowrap">05/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:28%"></div></div><span class="atr-days">13d</span></div></td>
-          <td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Projetos Civil, Metal, Instr. emitidos · em validação</td>
-        </tr>
-        <tr>
-          <td><span class="code">BLS-MLR-051</span></td><td>Sistema de drenagem próximo ao muro</td><td><span class="u u-bls">BLS</span></td>
-          <td style="font-size:10px">FEL III</td>
-          <td style="font-size:10.5px;color:var(--red);white-space:nowrap">01/06/2026</td><td style="font-size:10.5px;white-space:nowrap">04/06/2026</td>
-          <td><div class="atr-fill-wrap"><div class="atr-track"><div class="atr-fill" style="width:10%"></div></div><span class="atr-days">3d</span></div></td>
-          <td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Projeto precisou ser revisado · nova emissão prevista</td>
-        </tr>
+        <tr><td><span class="code">SNP-MLR-309</span></td><td>Sistema qualidade bacia pluvial segurança</td><td><span class="u u-snp">SNP</span></td><td style="font-size:10px">FEL II</td><td><span style="font-size:9.5px;font-weight:600;background:#e8f1e1;color:var(--navy2);padding:2px 6px;border-radius:3px">Eng. Processos</span></td><td style="font-size:10.5px;color:var(--red)">30/05/2026</td><td style="font-size:10.5px">23/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:20%"></div></div><span class="atr-days">5d</span></div></td><td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Projetos Civil e metal sendo elaborados</td></tr>
+        <tr><td><span class="code">SNP-MLR-248</span></td><td>Lançamento de efluente tratado por emissário</td><td><span class="u u-snp">SNP</span></td><td style="font-size:10px">FEL II</td><td><span style="font-size:9.5px;font-weight:600;background:#e0f5ef;color:#0d9488;padding:2px 6px;border-radius:3px">Meio Ambiente</span></td><td style="font-size:10.5px;color:var(--red)">31/10/2025</td><td style="font-size:10.5px">30/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:100%"></div></div><span class="atr-days">217d</span></div></td><td><span class="b b-alto">Alto</span></td><td style="font-size:11px;color:var(--red)">Maior atraso SNP · pendência Plano de Exploração</td></tr>
+        <tr><td><span class="code">NMT-MLR-023</span></td><td>Área de fertirrigação insuficiente</td><td><span class="u u-nmt">NMT</span></td><td style="font-size:10px">FEL II</td><td><span style="font-size:9.5px;font-weight:600;background:#e0f5ef;color:#0d9488;padding:2px 6px;border-radius:3px">Meio Ambiente</span></td><td style="font-size:10.5px;color:var(--red)">03/03/2026</td><td style="font-size:10.5px">30/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:80%"></div></div><span class="atr-days">93d</span></div></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Em FEL II · projetos de engenharia em elaboração</td></tr>
+        <tr><td><span class="code">NMT-MLR-203</span></td><td>Telemetria dos poços de observação</td><td><span class="u u-nmt">NMT</span></td><td style="font-size:10px">FEL IV</td><td><span style="font-size:9.5px;font-weight:600;background:var(--green-bg);color:var(--green);padding:2px 6px;border-radius:3px">Obras</span></td><td style="font-size:10.5px;color:var(--red)">29/04/2026</td><td style="font-size:10.5px">30/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:40%"></div></div><span class="atr-days">36d</span></div></td><td><span class="b b-bxo">Baixo</span></td><td style="font-size:11px">Em execução · 12,98% avanço · MO em contratação</td></tr>
+        <tr><td><span class="code">DRD-MLR-123</span></td><td>Implantação de monge para bacia pluvial</td><td><span class="u u-drd">DRD</span></td><td style="font-size:10px">FEL IV</td><td><span style="font-size:9.5px;font-weight:600;background:var(--green-bg);color:var(--green);padding:2px 6px;border-radius:3px">Obras</span></td><td style="font-size:10.5px;color:var(--red)">18/05/2026</td><td style="font-size:10.5px">09/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:32%"></div></div><span class="atr-days">17d</span></div></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Em execução · desvio melhorou: −23% → −6,10%</td></tr>
+        <tr class="hl"><td><span class="code">DRD-MLR-002</span></td><td>Adequação CSAO — Posto Rodobras Dourados</td><td><span class="u u-drd">DRD</span></td><td style="font-size:10px">FEL IV</td><td><span style="font-size:9.5px;font-weight:600;background:var(--green-bg);color:var(--green);padding:2px 6px;border-radius:3px">Obras</span></td><td style="font-size:10.5px;color:var(--red)">12/05/2026</td><td style="font-size:10.5px">05/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:48%"></div></div><span class="atr-days">23d</span></div></td><td><span class="b b-alto">Alto</span></td><td style="font-size:11px;color:var(--green)">✓ 99,4% de avanço físico — conclusão iminente</td></tr>
+        <tr><td><span class="code">SDL-MLR-065</span></td><td>Adequação da drenagem na lagoa 03</td><td><span class="u u-sdl">SDL</span></td><td style="font-size:10px">FEL II</td><td><span style="font-size:9.5px;font-weight:600;background:#e8f1e1;color:var(--navy2);padding:2px 6px;border-radius:3px">Eng. Processos</span></td><td style="font-size:10.5px;color:var(--red)">30/05/2026</td><td style="font-size:10.5px">06/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:18%"></div></div><span class="atr-days">5d</span></div></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Projetos Civil com previsão de emissão</td></tr>
+        <tr><td><span class="code">SDL-FERT</span></td><td>Fertirrigação — Canhões Operando com Falhas</td><td><span class="u u-sdl">SDL</span></td><td style="font-size:10px">FEL IV</td><td><span style="font-size:9.5px;font-weight:600;background:var(--gray-bg);color:var(--gray-600);padding:2px 6px;border-radius:3px">Manutenção</span></td><td style="font-size:10.5px;color:var(--red)">22/05/2026</td><td style="font-size:10.5px">25/05/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:24%"></div></div><span class="atr-days">13d</span></div></td><td><span class="b b-alto">Alto</span></td><td style="font-size:11px">9 canhões pendentes com manutenção — em campo</td></tr>
+        <tr><td><span class="code">SDL-MLR-042</span></td><td>Melhorias na elevatória do posto Rodobras</td><td><span class="u u-sdl">SDL</span></td><td style="font-size:10px">FEL IV</td><td><span style="font-size:9.5px;font-weight:600;background:var(--green-bg);color:var(--green);padding:2px 6px;border-radius:3px">Obras</span></td><td style="font-size:10.5px;color:var(--red)">23/05/2026</td><td style="font-size:10.5px">05/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:28%"></div></div><span class="atr-days">12d</span></div></td><td><span class="b b-med">Médio</span></td><td style="font-size:11px">Em Atraso · execução em andamento</td></tr>
+        <tr><td><span class="code">SDL-POC-B</span></td><td>Poços Captação — Poço 6 e 7 sem Outorga</td><td><span class="u u-sdl">SDL</span></td><td style="font-size:10px">Estudo</td><td><span style="font-size:9.5px;font-weight:600;background:#e0f5ef;color:#0d9488;padding:2px 6px;border-radius:3px">Meio Ambiente</span></td><td style="font-size:10.5px;color:var(--red)">31/08/2024</td><td style="font-size:10.5px">30/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:100%"></div></div><span class="atr-days">643d</span></div></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px;color:var(--amber)">Aguardando Outorga IMASUL — dependência externa</td></tr>
+        <tr><td><span class="code">BLS-MLR-047</span></td><td>Sistema de qualidade da bacia pluvial</td><td><span class="u u-bls">BLS</span></td><td style="font-size:10px">FEL II</td><td><span style="font-size:9.5px;font-weight:600;background:#e8f1e1;color:var(--navy2);padding:2px 6px;border-radius:3px">Eng. Processos</span></td><td style="font-size:10.5px;color:var(--red)">22/05/2026</td><td style="font-size:10.5px">05/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:28%"></div></div><span class="atr-days">13d</span></div></td><td><span class="b b-crit">Crítico</span></td><td style="font-size:11px">Projetos Civil, Metal, Instr. emitidos · em validação</td></tr>
+        <tr><td><span class="code">BLS-MLR-051</span></td><td>Sistema de drenagem próximo ao muro</td><td><span class="u u-bls">BLS</span></td><td style="font-size:10px">FEL III</td><td><span style="font-size:9.5px;font-weight:600;background:var(--green-bg);color:var(--green);padding:2px 6px;border-radius:3px">Obras</span></td><td style="font-size:10.5px;color:var(--red)">01/06/2026</td><td style="font-size:10.5px">04/06/2026</td><td><div class="atr-wrap"><div class="atr-track"><div class="atr-fill" style="width:10%"></div></div><span class="atr-days">3d</span></div></td><td><span class="b b-alto">Alto</span></td><td style="font-size:11px">Projeto precisou ser revisado · nova emissão prevista</td></tr>
       </tbody>
     </table>
     </div>
   </div>
 
-  <!-- ═══ 6. CAPEX ═══ -->
-  <div class="section-eyebrow">
+  <!-- SEÇÃO 6 — CAPEX -->
+  <div class="sec-hdr">
     <h3>6 · CAPEX por Unidade</h3>
     <div class="bar"></div>
-    <div class="count-tag">Orçado vs Vigente · 08/Mai → 04/Jun/2026</div>
+    <div class="tag">Orçado vs Vigente · 08/Mai → 04/Jun/2026</div>
   </div>
-
   <div class="cx-grid">
     <div class="cx"><div class="cx-unit"><span class="u u-snp">SNP</span> Sinop · MT</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$4,54mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$6,54mi</span></div><div class="cx-delta"><span>6 revisados</span><span style="color:var(--red)">+R$2,00mi (+44,1%)</span></div><div class="cx-track"><div class="cx-prog" style="width:69%;background:var(--navy2)"></div></div></div>
     <div class="cx"><div class="cx-unit"><span class="u u-nmt">NMT</span> Nova Mutum · MT</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$19,62mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$21,37mi</span></div><div class="cx-delta"><span>6 revisados</span><span style="color:var(--red)">+R$1,75mi (+8,9%)</span></div><div class="cx-track"><div class="cx-prog" style="width:92%;background:var(--green)"></div></div></div>
     <div class="cx"><div class="cx-unit"><span class="u u-drd">DRD</span> Dourados · MS</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$6,93mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$8,13mi</span></div><div class="cx-delta"><span>6 revisados</span><span style="color:var(--red)">+R$1,20mi (+17,3%)</span></div><div class="cx-track"><div class="cx-prog" style="width:85%;background:var(--amber)"></div></div></div>
-    <div class="cx"><div class="cx-unit"><span class="u u-sdl">SDL</span> Sidrolândia · MS</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$5,63mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$2,88mi</span></div><div class="cx-delta"><span>4 revisados</span><span style="color:var(--green)">−R$2,75mi (−48,8%)</span></div><div class="cx-track"><div class="cx-prog" style="width:51%;background:#5b21b6"></div></div></div>
+    <div class="cx"><div class="cx-unit"><span class="u u-sdl">SDL</span> Sidrolândia · MS</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$5,63mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$2,88mi</span></div><div class="cx-delta"><span>4 revisados</span><span style="color:var(--green)">−R$2,75mi (−48,8%)</span></div><div class="cx-track"><div class="cx-prog" style="width:51%;background:#7c3aed"></div></div></div>
     <div class="cx"><div class="cx-unit"><span class="u u-bls">BLS</span> Balsas · MA</div><div class="cx-row"><span class="cx-lbl">Orçado</span><span class="cx-val">R$5,02mi</span></div><div class="cx-row"><span class="cx-lbl">Vigente</span><span class="cx-val">R$5,48mi</span></div><div class="cx-delta"><span>7 revisados</span><span style="color:var(--red)">+R$463k (+9,2%)</span></div><div class="cx-track"><div class="cx-prog" style="width:92%;background:var(--red)"></div></div></div>
   </div>
-  <div class="insight-box" style="border-left-color:var(--green)"><strong>Destaque SDL:</strong> Sidrolândia registrou redução de CAPEX de −48,8% (−R$2,75mi) — principalmente SDL-MLR-061 que teve escopo revisado de R$3,64mi para R$894k (−75%). Revisão de escopo gerou <strong>economia real</strong>, não cancelamento de projeto.</div>
+  <div class="insight green"><strong>Destaque SDL:</strong> Sidrolândia registrou redução de CAPEX de −48,8% (−R$2,75mi) — SDL-MLR-061 teve escopo revisado de R$3,64mi para R$894k (−75%). Revisão de escopo gerou <strong>economia real</strong>, não cancelamento.</div>
 
-  <!-- ═══ 7. SÍNTESE ═══ -->
-  <div class="section-eyebrow">
+  <!-- SEÇÃO 7 — SÍNTESE -->
+  <div class="sec-hdr">
     <h3>7 · Síntese Executiva</h3>
     <div class="bar"></div>
-    <div class="count-tag">Leitura consolidada 08/Mai → 04/Jun/2026</div>
+    <div class="tag">Leitura consolidada 08/Mai → 04/Jun/2026</div>
   </div>
 
-  <!-- AVANÇOS -->
-  <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:12px">
-    <div style="background:var(--green);padding:9px 18px;display:flex;align-items:center;gap:10px">
-      <span style="font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">✓ Avanços do Período</span>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0">
-
-      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:6px">Transferência Engenharia → Obras</div>
-        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
-          <strong style="color:var(--navy2)">13 projetos</strong> concluíram a fase de Engenharia de Processos (FEL II) e transferiram a responsabilidade para Obras. A disciplina Obras passou de <strong>6 para 16 pendências ativas</strong> (+167%), enquanto Engenharia Processos caiu de 17 para 7 — sinal claro de que o campo está em movimento.
-        </div>
-      </div>
-
-      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:6px">Projetos Concluídos</div>
-        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
-          O portfólio saiu de <strong style="color:var(--navy2)">4 para 8 concluídos</strong> (+4 no período). Destaque para <strong>BLS-MLR-034 — Construção de Depósito de Cinzas</strong>, que era Crítico e estava na <strong>Onda 1</strong> em 08/Mai — concluído em 29/Mai após 184 dias de lead time total. Com sua saída, a <strong>Onda 1 reduziu de 9 para 8 projetos</strong>.
-        </div>
-      </div>
-
-      <div style="padding:16px 20px;border-bottom:1px solid var(--gray-200)">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--green);margin-bottom:6px">Redução de Críticos e Ondas</div>
-        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
-          Críticos abertos reduziram de <strong style="color:var(--navy2)">13 para 11</strong>. O total em aberto caiu de 39 para <strong>35 projetos (−4)</strong>: Onda 1 (9→8), Onda 2 (9→7), Onda 3 (13→12), Onda 4 (8→7). A redução de SDL otimizou CAPEX em <strong>−R$2,75mi</strong> via revisão de escopo em SDL-MLR-061.
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ATENÇÃO -->
-  <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:12px">
-    <div style="background:var(--amber);padding:9px 18px">
-      <span style="font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">⚠ Pontos de Atenção</span>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0">
-
-      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:6px">11 Críticos Ainda Abertos</div>
-        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
-          Dos <strong style="color:var(--navy2)">11 críticos abertos</strong>, nenhum da Onda 2 foi encerrado no período — são os mais complexos e exigem ação imediata. A Onda 2 reduziu de 9 para 7 por conclusão de projetos no período — nenhum da própria Onda 2 foi encerrado diretamente.
-        </div>
-      </div>
-
-      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:6px">Atraso Estrutural</div>
-        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
-          <strong style="color:var(--navy2)">SNP-MLR-248 — Lançamento de Efluente Tratado por Emissário</strong> acumula <strong>217 dias de atraso</strong> — bloqueado por pendência de emissão do Plano de Exploração, sem responsável definido e sem previsão concreta de resolução. Exige decisão executiva imediata.
-        </div>
-      </div>
-
-      <div style="padding:16px 20px;border-bottom:1px solid var(--gray-200)">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:6px">CAPEX Total Aumentou +R$1,97mi</div>
-        <div style="font-size:13px;color:var(--gray-700);line-height:1.6">
-          O CAPEX vigente subiu de R$42,43mi para <strong style="color:var(--navy2)">R$44,40mi (+4,7%)</strong> — reflexo direto das revisões de engenharia ao finalizar a FEL II. <strong>SNP</strong> teve o maior aumento: +R$2,00mi (+44,1%), puxado pelas revisões de SNP-MLR-294 (fertirrigação, +775%) e SNP-MLR-284 (+613%).
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- AÇÕES -->
-  <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card);margin-bottom:10px">
-    <div style="background:var(--navy2);padding:9px 18px">
-      <span style="font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.5px">→ Ações Prioritárias — Próximos 15 Dias</span>
-    </div>
+  <!-- AVANÇOS DO PERÍODO -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-hdr" style="background:var(--green)"><h3>✓ Avanços do Período</h3></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
 
-      <div style="padding:14px 20px;border-right:1px solid var(--gray-200)">
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px">
-          <div style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--navy2);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">1</div>
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Transferência Engenharia → Obras</div>
+        <p style="font-size:13px;color:var(--gray-700);line-height:1.65"><strong style="color:var(--navy2)">13 projetos</strong> concluíram a fase de Engenharia de Processos (FEL II) e tiveram a responsabilidade transferida para Obras. A engenharia finalizou os projetos, revisou o CAPEX e emitiu a documentação técnica. A disciplina Obras passou de <strong style="color:var(--navy2)">6 para 16 pendências ativas (+167%)</strong>, enquanto Engenharia Processos caiu de 17 para 7 — sinal claro de que o campo está em movimento.</p>
+      </div>
+
+      <div style="padding:16px 20px;border-bottom:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Projetos Concluídos no Período</div>
+        <p style="font-size:13px;color:var(--gray-700);line-height:1.65">O portfólio saiu de <strong style="color:var(--navy2)">4 para 8 concluídos (+4 no período)</strong>. Destaque para <strong style="color:var(--navy2)">BLS-MLR-034 — Construção de Depósito de Cinzas</strong>, que era Crítico e estava na Onda 1 em 08/Mai — concluído em 29/Mai após 184 dias de lead time total. Com sua saída, <strong style="color:var(--navy2)">Onda 1 reduziu de 9 para 8 projetos</strong>. Balsas foi a unidade com maior número de conclusões no período: 5 projetos encerrados.</p>
+      </div>
+
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Redução das Ondas de Prioridade</div>
+        <p style="font-size:13px;color:var(--gray-700);line-height:1.65">O total de projetos em aberto reduziu de <strong style="color:var(--navy2)">39 para 35 (−4)</strong>. Onda 1 passou de 9 para 8, Onda 2 de 9 para 7. A unidade Sidrolândia otimizou o CAPEX em <strong style="color:var(--navy2)">−R$2,75mi (−48,8%)</strong> por revisão de escopo em SDL-MLR-061 — de R$3,64mi para R$894k. Trata-se de economia real, não cancelamento de projeto.</p>
+      </div>
+
+      <div style="padding:16px 20px">
+        <div style="font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Onda 2 — 4 Projetos Avançaram para FEL III</div>
+        <p style="font-size:13px;color:var(--gray-700);line-height:1.65"><strong style="color:var(--navy2)">SNP-MLR-284</strong> (Melhoria da peneira rotativa), <strong style="color:var(--navy2)">SNP-MLR-294</strong> (Fertirrigação SNP), <strong style="color:var(--navy2)">NMT-MLR-190</strong> (Implantação de monge pluvial) e <strong style="color:var(--navy2)">DRD-MLR-167</strong> (Tratamento de efluente oleoso) — todos concluíram a engenharia, tiveram CAPEX aprovado e passaram a responsabilidade para Obras. Estes 4 projetos saíram da Onda 2.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PONTOS DE ATENÇÃO -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="card-hdr" style="background:var(--amber)"><h3>⚠ Pontos de Atenção</h3></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200)">
+        <div style="font-size:10px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Onda 1 — 5 Projetos em Atraso</div>
+        <p style="font-size:13px;color:var(--gray-700);line-height:1.65">Dos 8 projetos ativos na Onda 1, <strong style="color:var(--navy2)">5 estão em atraso</strong> em 04/Jun (eram 4 em 08/Mai) e <strong style="color:var(--navy2)">6 tiveram seus prazos reprogramados</strong> no período. Os projetos em atraso com maior risco de impacto são <strong style="color:var(--red)">DRD-MLR-123</strong> (desvio −6%, prazo 09/Jun) e <strong style="color:var(--red)">SDL-FERT</strong> (9 canhões em campo pendentes de manutenção). DRD-MLR-002 tem 99,4% de execução física e a conclusão é iminente.</p>
+      </div>
+
+      <div style="padding:16px 20px">
+        <div style="font-size:10px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">SNP-MLR-248 — Lançamento de Efluente Tratado por Emissário — 217 Dias de Atraso</div>
+        <p style="font-size:13px;color:var(--gray-700);line-height:1.65">Este projeto acumula <strong style="color:var(--red)">217 dias de atraso</strong> e é o caso mais crítico do portfólio de Sinop. A pendência é a emissão do Plano de Exploração junto ao órgão ambiental, sem responsável interno definido e sem previsão concreta de resolução. O risco regulatório cresce a cada semana — exige <strong style="color:var(--navy2)">decisão executiva imediata</strong> sobre o caminho de desbloqueio.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AÇÕES PRIORITÁRIAS -->
+  <div class="card">
+    <div class="card-hdr" style="background:var(--navy2)"><h3>→ Ações Prioritárias — Próximos 15 Dias</h3></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+
+      <div style="padding:16px 20px;border-right:1px solid var(--gray-200)">
+        <div style="display:flex;align-items:flex-start;gap:12px">
+          <div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--navy2);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">1</div>
           <div>
-            <div style="font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:3px">Mobilizar contratadas para os 13 projetos em FEL III</div>
-            <div style="font-size:12px;color:var(--gray-600);line-height:1.5">A engenharia entregou os projetos — a janela de mobilização está aberta. Cada semana sem contratação de MO atrasa o prazo de execução e aumenta risco de acumulação com a safra.</div>
-          </div>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:10px">
-          <div style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--navy2);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
-          <div>
-            <div style="font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:3px">Fechar DRD-MLR-002 — Adequação CSAO do Posto Rodobras Dourados (99,4% executado) e DRD-MLR-123 — Implantação de Monge para Bacia Pluvial (desvio −6%)</div>
-            <div style="font-size:12px;color:var(--gray-600);line-height:1.5">Ambos com execução física quase concluída. O encerramento formal libera capacidade de fiscalização em Dourados e melhora os indicadores de conclusão da unidade.</div>
+            <div style="font-size:13px;font-weight:700;color:var(--navy2);margin-bottom:6px">Mobilizar contratadas para os 13 projetos em FEL III</div>
+            <p style="font-size:13px;color:var(--gray-600);line-height:1.65">A engenharia entregou os projetos e o CAPEX está aprovado — a janela de mobilização está aberta. Cada semana sem contratação de mão de obra atrasa o prazo de execução e aumenta o risco de conflito com a safra. Prioridade máxima nas unidades SNP (4 projetos em FEL III), NMT (2) e DRD (3).</p>
           </div>
         </div>
       </div>
 
+      <div style="padding:16px 20px">
+        <div style="display:flex;align-items:flex-start;gap:12px">
+          <div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--navy2);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--navy2);margin-bottom:6px">Fechar DRD-MLR-002 — Adequação CSAO do Posto Rodobras Dourados (99,4%) e DRD-MLR-123 — Implantação de Monge para Bacia Pluvial (desvio −6%)</div>
+            <p style="font-size:13px;color:var(--gray-600);line-height:1.65">Ambos os projetos têm execução física praticamente concluída. O encerramento formal libera a equipe de fiscalização em Dourados para focar nos projetos que acabaram de entrar em FEL III, além de melhorar os indicadores de conclusão da unidade.</p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
+
 
 </div>
 
 <div class="footer">
   <div class="ft">INPASA Agroindustrial S/A · Planejamento &amp; Controle · Condicionantes Ambientais · Confidencial</div>
-  <div class="ft">Fonte: Monday.com Board #18409654427 · Ref. 04/Jun/2026 · Última sincronização: 04/06/2026 18:55 BRT</div>
+  <div class="ft">Fonte: Monday.com Board #18409654427 · Ref. 04/Jun/2026 · Última sincronização: 04/06/2026 BRT</div>
 </div>
 
+<button class="print-btn" onclick="window.print()">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  Imprimir / Exportar PDF
+</button>
 
-<div style="position:fixed;bottom:24px;right:24px;z-index:999">
-  <button onclick="window.print()" style="background:var(--navy2);color:#fff;border:none;border-radius:8px;padding:11px 22px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 4px 12px rgba(15,23,42,.25);display:flex;align-items:center;gap:8px;letter-spacing:.02em">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-    Imprimir / Exportar PDF
-  </button>
-</div>
 </body>
 </html>
